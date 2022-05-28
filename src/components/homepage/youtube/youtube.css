@@ -1,0 +1,23 @@
+.dvYoutube {
+  background-size: cover !important;
+  background-position: center !important;
+}
+.dvYoutube .opacity {
+  background-color: var(--opacity);
+  padding: 5rem 2rem;
+  color: var(--white-color);
+}
+.dvYoutube .btn {
+  background-color: transparent;
+  border: none;
+}
+.dvYoutube .fa-play {
+  color: var(--white-color);
+  font-size: 5rem;
+}
+
+@media (min-width: 1200px) {
+  .dvYoutube .opacity {
+    padding: 5rem 10rem;
+  }
+}

@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container-lg">
           <div className="row align-items-center pt-1">
             <div className="col d-lg-none">
-              <i class="fa-solid fa-bars"></i>
+              <i className="fa-solid fa-bars"></i>
             </div>
             <div className="col col-lg-1 text-center text-lg-left">
               <img
@@ -19,7 +19,7 @@ const Header = () => {
             </div>
             <div className="dvSlideMenu col-lg-10 px-0 px-lg-3">
               <button className="btn btn-black closeBtn d-lg-none">
-                <i class="fa-solid fa-xmark"></i>
+                <i className="fa-solid fa-xmark"></i>
               </button>
               <ul className="dvMenu">
                 <li>
@@ -37,7 +37,7 @@ const Header = () => {
               </ul>
             </div>
             <div className="col col-lg-1 text-right">
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
             </div>
           </div>
         </div>

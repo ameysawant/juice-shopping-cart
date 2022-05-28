@@ -1,0 +1,13 @@
+.dvMainSlider {
+  background-color: var(--primary-color);
+  height: 100vh;
+}
+.dvMainSlider .img-fluid {
+  max-width: 100px;
+}
+
+@media (min-width: 992px) {
+  .dvMainSlider .img-fluid {
+    max-width: 140px;
+  }
+}
