@@ -10,7 +10,7 @@ const Header = () => {
             <div className="col d-lg-none">
               <i className="fa-solid fa-bars"></i>
             </div>
-            <div className="col col-lg-1 text-center text-lg-left">
+            <div className="col col-lg-auto text-center text-lg-left">
               <img
                 width={50}
                 src="https://static.wixstatic.com/media/2c0034_a27b95faba1d432fbddcf6ac4e9683ba~mv2.png"

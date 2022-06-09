@@ -19,7 +19,7 @@ const Youtube = () => {
             demonstrate the visual.
           </p>
           <button className="btn">
-            <i class="fa-solid fa-play"></i>
+            <i className="fa-solid fa-play"></i>
           </button>
         </div>
       </div>
