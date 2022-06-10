@@ -1,0 +1,36 @@
+.dvFooter {
+  background-color: var(--black-color);
+}
+.dvFooter .dvLogo img {
+  border: 1px solid #555;
+  border-radius: 50%;
+}
+.dvFooter p {
+  color: #777;
+}
+.dvFooter .heading-sm {
+  color: var(--white-color);
+}
+.dvFooter .dvLinks a {
+  color: #777;
+}
+.dvFooter .dvSubscribe .btn {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.dvFooter form {
+  position: relative;
+}
+.dvFooter .f-control {
+  border-radius: var(--b-radius);
+}
+.dvFooter .dvSocial a {
+  background-color: var(--white-color);
+  color: var(--black-color);
+  padding: 0.5rem;
+  border-radius: var(--b-radius);
+}
