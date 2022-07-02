@@ -1,0 +1,14 @@
+.dvProductListing .packs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e0dbdb;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0 0 0 10px;
+}
+.dvProductListing .shadow {
+  border: 1px solid #dddddd;
+}
+.dvProductListing .shadow:hover {
+  box-shadow: 0 0 5px 10px #eee;
+}

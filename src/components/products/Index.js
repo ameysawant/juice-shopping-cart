@@ -6,15 +6,15 @@ import Cart from "./cart/Cart";
 const Index = () => {
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
-          <div className="dvFilter modal col-lg-3">
+          <div className="dvFilter modal col-lg-3 col-xl-2">
             <Filter />
           </div>
-          <div className="dvProductListing col-sm-6">
+          <div className="dvProductListing col-12 col-lg-6 col-xl-8">
             <ProductListing />
           </div>
-          <div className="dvCart col-lg-3">
+          <div className="dvCart col-lg-3 col-xl-2">
             <Cart />
           </div>
         </div>

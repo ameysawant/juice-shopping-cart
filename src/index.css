@@ -123,6 +123,7 @@ table tr:nth-child(odd) {
 
 /*modal*/
 .modal {
+  /* display: none; */
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
   width: 100%;
