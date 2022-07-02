@@ -17,7 +17,7 @@ const Header = () => {
                 alt=""
               />
             </div>
-            <div className="dvSlideMenu col-lg-10 px-0 px-lg-3">
+            <div className="dvSlideMenu col-lg-auto px-0 px-lg-3">
               <button className="btn btn-black closeBtn d-lg-none">
                 <i className="fa-solid fa-xmark"></i>
               </button>
@@ -36,7 +36,7 @@ const Header = () => {
                 </li>
               </ul>
             </div>
-            <div className="col col-lg-1 text-right">
+            <div className="col col-lg-auto ml-lg-auto text-right">
               <i className="fa-solid fa-cart-shopping"></i>
             </div>
           </div>
