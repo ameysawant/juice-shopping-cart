@@ -47,6 +47,11 @@ body {
   line-height: 1.5;
 }
 
+/*helper classes*/
+.text-red {
+  color: red;
+}
+
 /*anchor*/
 a {
   display: inline-block;
@@ -179,5 +184,8 @@ table tr:nth-child(odd) {
     transform: none !important;
     z-index: auto !important;
     border-radius: unset !important;
+  }
+  .modal .modal-container input {
+    margin-left: 0.25rem;
   }
 }

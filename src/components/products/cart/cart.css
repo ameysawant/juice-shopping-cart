@@ -1,0 +1,54 @@
+.dvCart .clearAllBtn,
+.dvCart .removeBtn {
+  background-color: transparent;
+}
+.dvCart .removeBtn {
+  border: none;
+}
+.dvCart .fa-indian-rupee-sign {
+  font-size: 0.75rem;
+}
+.dvCart .price {
+  font-weight: bold;
+}
+
+.dvCart .bg-gray {
+  background-color: #eee;
+  padding: 0.5rem;
+  border-radius: var(--b-radius);
+}
+.dvCart .size,
+.dvCart .packs,
+.dvCart .small-text {
+  font-size: 0.75rem;
+}
+.dvCart .quantity {
+  flex: 0 0 150px;
+}
+.dvCart .quantity .btn {
+  background-color: white;
+}
+
+.dvCart .quantity .f-control {
+  text-align: center;
+  background-color: #ddd;
+}
+.dvCart .scrollbar {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+@media (min-width: 1200px) {
+  .dvCart .quantity {
+    flex: 0 0 180px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .dvCart .scrollbar {
+    max-height: 400px;
+  }
+  .dvCart .quantity {
+    flex: 0 0 140px;
+  }
+}

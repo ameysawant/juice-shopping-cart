@@ -5,8 +5,8 @@ const Filter = () => {
     <>
       <div className="modal-container">
         <div className="modal-header d-flex justify-content-between align-items-center mb-3 d-lg-none">
-          <h6 className="heading-sm">Modal Title</h6>
-          <i class="fa-solid fa-xmark closeBtn"></i>
+          <h6 className="heading-sm">Filter</h6>
+          <i class="fa-solid fa-xmark closeBtn btn btn-black py-1"></i>
         </div>
         <div className="modal-body">
           <div className="row">
@@ -34,49 +34,37 @@ const Filter = () => {
               </label>
             </div>
             <div className="col-6 col-md-4 col-lg-12 mb-3">
-              <h6 className="heading-sm text-lg-right">Categories</h6>
+              <h6 className="heading-sm text-lg-right">Size</h6>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
-                <span> All</span>
+                <span> 200ml</span>
               </label>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
-                <span>Juices</span>
+                <span>250ml</span>
               </label>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
-                <span>Almond Milks</span>
-              </label>
-              <label className="d-lg-flex flex-lg-row-reverse">
-                <input type="radio" name="radio" />
-                <span>Cleanses</span>
-              </label>
-              <label className="d-lg-flex flex-lg-row-reverse">
-                <input type="radio" name="radio" />
-                <span> Protein Milkshake</span>
+                <span>1itre</span>
               </label>
             </div>
             <div className="col-6 col-md-4 col-lg-12 mb-3">
-              <h6 className="heading-sm text-lg-right">Categories</h6>
+              <h6 className="heading-sm text-lg-right">Packs</h6>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
-                <span> All</span>
+                <span> Pack of 5</span>
               </label>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
-                <span>Juices</span>
+                <span>Pack of 10</span>
               </label>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
-                <span>Almond Milks</span>
+                <span>Pack of 15</span>
               </label>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
-                <span>Cleanses</span>
-              </label>
-              <label className="d-lg-flex flex-lg-row-reverse">
-                <input type="radio" name="radio" />
-                <span> Protein Milkshake</span>
+                <span>Pack of 20</span>
               </label>
             </div>
           </div>
