@@ -17,7 +17,7 @@ const ProductListing = () => {
             <h6 className="heading-sm">Valencia Orange</h6>
             <div className="d-flex justify-content-between">
               <div className="price">
-                <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                <i className="fa-solid fa-indian-rupee-sign"></i> 240
               </div>
               <div className="size">1Litre</div>
             </div>
@@ -36,7 +36,7 @@ const ProductListing = () => {
             <h6 className="heading-sm">Valencia Orange</h6>
             <div className="d-flex justify-content-between">
               <div className="price">
-                <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                <i className="fa-solid fa-indian-rupee-sign"></i> 240
               </div>
               <div className="size">1Litre</div>
             </div>
@@ -55,7 +55,7 @@ const ProductListing = () => {
             <h6 className="heading-sm">Valencia Orange</h6>
             <div className="d-flex justify-content-between">
               <div className="price">
-                <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                <i className="fa-solid fa-indian-rupee-sign"></i> 240
               </div>
               <div className="size">1Litre</div>
             </div>
@@ -74,7 +74,7 @@ const ProductListing = () => {
             <h6 className="heading-sm">Valencia Orange</h6>
             <div className="d-flex justify-content-between">
               <div className="price">
-                <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                <i className="fa-solid fa-indian-rupee-sign"></i> 240
               </div>
               <div className="size">1Litre</div>
             </div>
@@ -93,7 +93,7 @@ const ProductListing = () => {
             <h6 className="heading-sm">Valencia Orange</h6>
             <div className="d-flex justify-content-between">
               <div className="price">
-                <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                <i className="fa-solid fa-indian-rupee-sign"></i> 240
               </div>
               <div className="size">1Litre</div>
             </div>

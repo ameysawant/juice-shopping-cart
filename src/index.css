@@ -152,13 +152,6 @@ table tr:nth-child(odd) {
   cursor: pointer;
   padding: 0 0.5rem;
 }
-.modal .modal-container label {
-  display: block;
-}
-.modal .modal-container input {
-  margin-right: 0.25rem;
-  display: inline-block;
-}
 
 @media (min-width: 992px) {
   :root {
@@ -184,8 +177,5 @@ table tr:nth-child(odd) {
     transform: none !important;
     z-index: auto !important;
     border-radius: unset !important;
-  }
-  .modal .modal-container input {
-    margin-left: 0.25rem;
   }
 }

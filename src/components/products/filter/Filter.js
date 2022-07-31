@@ -1,4 +1,5 @@
 import React from "react";
+import "./filter.css";
 
 const Filter = () => {
   return (
@@ -6,7 +7,7 @@ const Filter = () => {
       <div className="modal-container">
         <div className="modal-header d-flex justify-content-between align-items-center mb-3 d-lg-none">
           <h6 className="heading-sm">Filter</h6>
-          <i class="fa-solid fa-xmark closeBtn btn btn-black py-1"></i>
+          <i className="fa-solid fa-xmark closeBtn btn btn-black py-1"></i>
         </div>
         <div className="modal-body">
           <div className="row">

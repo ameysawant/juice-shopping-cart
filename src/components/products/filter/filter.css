@@ -1,0 +1,14 @@
+.dvFilter .modal-container label {
+  display: block;
+}
+.dvFilter .modal-container input {
+  margin-right: 0.25rem;
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+  .dvFilter .modal-container input {
+    margin-left: 0.25rem;
+    margin-right: 0;
+  }
+}

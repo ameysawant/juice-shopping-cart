@@ -7,7 +7,7 @@ const Cart = () => {
       <div className="modal-container">
         <div className="modal-header d-flex justify-content-between align-items-center mb-3 d-lg-none">
           <h6 className="heading-sm">Cart</h6>
-          <i class="fa-solid fa-xmark closeBtn btn btn-black py-1"></i>
+          <i className="fa-solid fa-xmark closeBtn btn btn-black py-1"></i>
         </div>
         <div className="modal-body">
           <div className="row mb-3">
@@ -23,12 +23,12 @@ const Cart = () => {
             </div>
           </div>
           <div className="row scrollbar">
-            <div className="col-12 mb-3">
+            <div className="col-12 mb-3 pr-lg-0">
               <div className="bg-gray">
                 <div className="d-flex justify-content-between">
                   <h6 className="heading-sm">Valencia Orange</h6>
                   <button className="btn removeBtn">
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
                 <div className="d-flex">
@@ -37,8 +37,8 @@ const Cart = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                   <div className="quantity d-flex ">
-                    <button className="btn">
-                      <i class="fa-solid fa-plus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-plus"></i>
                     </button>
                     <input
                       className="f-control"
@@ -46,22 +46,22 @@ const Cart = () => {
                       readOnly
                       placeholder="1"
                     />
-                    <button className="btn">
-                      <i class="fa-solid fa-minus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-minus"></i>
                     </button>
                   </div>
                   <div className="price">
-                    <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12 mb-3">
+            <div className="col-12 mb-3 pr-lg-0">
               <div className="bg-gray">
                 <div className="d-flex justify-content-between">
                   <h6 className="heading-sm">Valencia Orange</h6>
                   <button className="btn removeBtn">
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
                 <div className="d-flex">
@@ -70,8 +70,8 @@ const Cart = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                   <div className="quantity d-flex ">
-                    <button className="btn">
-                      <i class="fa-solid fa-plus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-plus"></i>
                     </button>
                     <input
                       className="f-control"
@@ -79,22 +79,22 @@ const Cart = () => {
                       readOnly
                       placeholder="1"
                     />
-                    <button className="btn">
-                      <i class="fa-solid fa-minus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-minus"></i>
                     </button>
                   </div>
                   <div className="price">
-                    <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12 mb-3">
+            <div className="col-12 mb-3 pr-lg-0">
               <div className="bg-gray">
                 <div className="d-flex justify-content-between">
                   <h6 className="heading-sm">Valencia Orange</h6>
                   <button className="btn removeBtn">
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
                 <div className="d-flex">
@@ -103,8 +103,8 @@ const Cart = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                   <div className="quantity d-flex ">
-                    <button className="btn">
-                      <i class="fa-solid fa-plus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-plus"></i>
                     </button>
                     <input
                       className="f-control"
@@ -112,22 +112,22 @@ const Cart = () => {
                       readOnly
                       placeholder="1"
                     />
-                    <button className="btn">
-                      <i class="fa-solid fa-minus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-minus"></i>
                     </button>
                   </div>
                   <div className="price">
-                    <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12 mb-3">
+            <div className="col-12 mb-3 pr-lg-0">
               <div className="bg-gray">
                 <div className="d-flex justify-content-between">
                   <h6 className="heading-sm">Valencia Orange</h6>
                   <button className="btn removeBtn">
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
                 <div className="d-flex">
@@ -136,8 +136,8 @@ const Cart = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                   <div className="quantity d-flex ">
-                    <button className="btn">
-                      <i class="fa-solid fa-plus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-plus"></i>
                     </button>
                     <input
                       className="f-control"
@@ -145,22 +145,22 @@ const Cart = () => {
                       readOnly
                       placeholder="1"
                     />
-                    <button className="btn">
-                      <i class="fa-solid fa-minus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-minus"></i>
                     </button>
                   </div>
                   <div className="price">
-                    <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12 mb-3">
+            <div className="col-12 mb-3 pr-lg-0">
               <div className="bg-gray">
                 <div className="d-flex justify-content-between">
                   <h6 className="heading-sm">Valencia Orange</h6>
                   <button className="btn removeBtn">
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                   </button>
                 </div>
                 <div className="d-flex">
@@ -169,8 +169,8 @@ const Cart = () => {
                 </div>
                 <div className="d-flex justify-content-between">
                   <div className="quantity d-flex ">
-                    <button className="btn">
-                      <i class="fa-solid fa-plus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-plus"></i>
                     </button>
                     <input
                       className="f-control"
@@ -178,12 +178,12 @@ const Cart = () => {
                       readOnly
                       placeholder="1"
                     />
-                    <button className="btn">
-                      <i class="fa-solid fa-minus"></i>
+                    <button className="btn p-2">
+                      <i className="fa-solid fa-minus"></i>
                     </button>
                   </div>
                   <div className="price">
-                    <i class="fa-solid fa-indian-rupee-sign"></i> 240
+                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
                   </div>
                 </div>
               </div>
