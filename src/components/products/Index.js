@@ -7,7 +7,7 @@ import ProductDetail from "./productdetail/ProductDetail";
 const Index = () => {
   return (
     <>
-      {/* <div className="container-fluid">
+      <div className="container-fluid">
         <div className="row">
           <div className="dvFilter modal col-lg-3 col-xl-2">
             <Filter />
@@ -19,8 +19,8 @@ const Index = () => {
             <Cart />
           </div>
         </div>
-      </div> */}
-      <ProductDetail />
+      </div>
+      {/* <ProductDetail /> */}
     </>
   );
 };

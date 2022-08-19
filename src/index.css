@@ -158,7 +158,8 @@ table tr:nth-child(odd) {
     --fs-lg: 3.5rem;
     --fs-md: 1.5rem;
   }
-  .modal {
+  .dvFilter.modal,
+  .dvCart.modal {
     background: none;
     position: static;
     width: auto;
@@ -167,7 +168,8 @@ table tr:nth-child(odd) {
     top: auto;
     left: auto;
   }
-  .modal-container {
+  .dvFilter .modal-container,
+  .dvCart .modal-container {
     background: white !important;
     padding: 0 !important;
     position: static !important;
