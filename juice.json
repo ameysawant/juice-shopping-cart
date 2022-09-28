@@ -1,0 +1,1268 @@
+{
+  "homepage": {
+    "header": {
+      "logo": {
+        "url": "https://static.wixstatic.com/media/2c0034_a27b95faba1d432fbddcf6ac4e9683ba~mv2.png"
+      },
+      "parentLinks": [
+        {
+          "id": 1,
+          "link": "Shop"
+        },
+        {
+          "id": 2,
+          "link": "Learn",
+          "subLinks": [
+            { "id": 1, "link": "Process" },
+            { "id": 2, "link": "About Us" },
+            { "id": 3, "link": "Blog" },
+            { "id": 4, "link": "News" },
+            { "id": 5, "link": "Beyond The Bottle" }
+          ]
+        },
+        { "id": 3, "link": "Sign Up" },
+        { "id": 4, "link": "Login" }
+      ]
+    },
+    "mainSlider": [
+      {
+        "id": 1,
+        "img": "https://static.wixstatic.com/media/2c0034_5916d66c114c4a3fb055fd0fff15f402~mv2.png",
+        "heading": "Valencia Orange",
+        "smallHeading": "Only Juice Nothing Else",
+        "description": "Juices made with familiar, simple ingredients that are easy to recognize, understand and pronounce."
+      },
+      {
+        "id": 2,
+        "img": "https://static.wixstatic.com/media/2c0034_ecb14379435e405996be56ad460df8d0~mv2.png",
+        "heading": "Lean",
+        "smallHeading": "Boost Immunity Everyday",
+        "description": "Our hand-picked curation of everything raw. Choose from a wide range of pre-made bundles and save more on every purchase."
+      },
+      {
+        "id": 3,
+        "img": "https://static.wixstatic.com/media/2c0034_efd3336ca11743f796271887c60c2dd1~mv2.png",
+        "heading": "Pomegranate",
+        "smallHeading": "High in Anti-Oxidants",
+        "description": "Our Anaar has the sweet juice of the pulp without the bitterness of the seeds. Enjoy this healthy heart delight."
+      }
+    ],
+    "youtube": {
+      "id": 1,
+      "img": "https://static.wixstatic.com/media/2c0034_fc43f01850924a8e9cf5695d060ff42f~mv2.png",
+      "heading": "Leave The Squeezing With Us",
+      "description": "We work with farmers directly to get the best quality fruits, vegetables and nuts from across the world, pack the goodness in a bottle and deliver it with love!"
+    },
+    "aboutus": {
+      "img": "https://static.wixstatic.com/media/2c0034_345eccd53f1348a5baa304aaf70ffe13~mv2.jpg",
+      "heading": "Welcome to Demo",
+      "description": "We challenge conventions and dare to break the mould. At our core, is a free spirit that can't be tamed. We focus on the good, leave out the bad and go the whole way. We don't dip our toes in the water, we dive in.",
+      "points": [
+        {
+          "id": 1,
+          "img": "https://static.wixstatic.com/media/2c0034_ca86212b4cb8403a91414198dcb82618~mv2.png",
+          "heading": "Always Fresh",
+          "description": "Every athlete's go to natural energy drink; Coconut Water is a complete win-win for your everyday rehydration needs. #iaminlovewiththecoco!"
+        },
+        {
+          "id": 2,
+          "img": "https://static.wixstatic.com/media/2c0034_e72cf1ca3caa436cb4016c99f5a98c7c~mv2.png",
+          "heading": "100% Natural",
+          "description": "Get a sunshine start to your day with perfectly squeezed Valencia oranges, with dietary fibres + vitamin C. Probably the best orange juice you have ever had!"
+        },
+        {
+          "id": 3,
+          "img": "https://static.wixstatic.com/media/2c0034_89082b03c72343ba8c281296a5ca6e40~mv2.png",
+          "heading": "Best Quality",
+          "description": "Our Pomegranate juice is a crowd favorite. Our Anaar has the sweet juice of the pulp without the bitterness of the seeds. Enjoy this healthy heart delight."
+        }
+      ]
+    },
+    "productSlider": [
+      {
+        "id": 1,
+        "img": "https://static.wixstatic.com/media/2c0034_4b4539716bfe4376ae643cb8cb46053e~mv2.png",
+        "heading": "Valencia Orange",
+        "aboutJuice": [
+          { "id": 1, "point": "Cold Pressed" },
+          { "id": 2, "point": "No Added Sugar" },
+          { "id": 3, "point": "No Preservatives" }
+        ],
+        "description": "Get a sunshine start to your day with freshly squeezed valencia oranges, loaded with dietary fibres and vitamin C. It's the best orange juice you ever had!"
+      },
+      {
+        "id": 2,
+        "img": "https://static.wixstatic.com/media/2c0034_c4bab7c37114432699c6c56d9c250038~mv2.png",
+        "heading": "Lean",
+        "aboutJuice": [
+          { "id": 1, "point": "Good For The Gut" },
+          { "id": 2, "point": "Aids Immunity Boosting" },
+          { "id": 3, "point": "Sourced Responsibly" }
+        ],
+        "description": "What do you get when you combine kiwi, apple, kale with a twist of superfood spirulina? The greenest veggie & fruit blend that truly makes healthy..tasty!"
+      },
+      {
+        "id": 3,
+        "img": "https://static.wixstatic.com/media/2c0034_564d626f933543faa6fb2f0aabcaf2fe~mv2.png",
+        "heading": "Almond Coffee Milk",
+        "aboutJuice": [
+          { "id": 1, "point": "Vitamin C" },
+          { "id": 2, "point": "Anti-Oxidant" },
+          { "id": 3, "point": "Healthy" }
+        ],
+        "description": "Our Pomegranate juice is a crowd favorite. Our Anaar has the sweet juice of the pulp without the bitterness of the seeds. Enjoy this healthy heart delight."
+      }
+    ],
+    "team": {
+      "heading": "Our Squad",
+      "description": "Meet the squad that works round the clock to get you the goodness of mother nature from farm to your doorstep.",
+      "teamMembers": [
+        {
+          "id": 1,
+          "img": "https://static.wixstatic.com/media/2c0034_45677ff0b5e24b5fb4c83b761a1429ea~mv2.png",
+          "heading": "Ally Doe",
+          "designation": "CEO"
+        },
+        {
+          "id": 2,
+          "img": "https://static.wixstatic.com/media/2c0034_fa11d0c66c9344aca23850119f616d59~mv2.png",
+          "heading": "Sam Jones",
+          "designation": "CFO"
+        },
+        {
+          "id": 3,
+          "img": "https://static.wixstatic.com/media/2c0034_10a53bc365df4a2e9225ccd2e31cad43~mv2.png",
+          "heading": "Rahul Westy",
+          "designation": "COO & Co-Founder"
+        },
+        {
+          "id": 4,
+          "img": "https://static.wixstatic.com/media/2c0034_ec508c75badf4928aae7a595994135d8~mv2.png",
+          "heading": "Manish Dedia",
+          "designation": "GM Logistics"
+        },
+        {
+          "id": 5,
+          "img": "https://static.wixstatic.com/media/2c0034_52c68c347b274bda9a90d58dc43a426f~mv2.png",
+          "heading": "Survesh Mestry",
+          "designation": "Director, Sales"
+        },
+        {
+          "id": 6,
+          "img": "https://static.wixstatic.com/media/2c0034_db14f7a12b3949fbb4c92685ca427a67~mv2.png",
+          "heading": "Bharat Sharma",
+          "designation": "Head, Marketing"
+        }
+      ]
+    },
+    "footer": {
+      "copyRightText": "Copyright © 2022 All Rights Reserved.",
+      "websiteDesignedBy": "Kishori Tutorials",
+      "img": "https://static.wixstatic.com/media/2c0034_a27b95faba1d432fbddcf6ac4e9683ba~mv2.png",
+      "about": "About Demo",
+      "aboutText": "We challenge conventions and dare to break the mould.",
+      "shop": "Shop",
+      "learn": "Learn",
+      "subscribe": "Subscribe Us",
+      "contact": "Contact Us",
+      "shopLinks": [
+        { "id": 1, "link": "Subscriptons" },
+        { "id": 2, "link": "Value pack" },
+        { "id": 3, "link": "Cleanses" },
+        { "id": 4, "link": "Juices" },
+        { "id": 5, "link": "Almond Milks" },
+        { "id": 6, "link": "protein Milkshake" }
+      ],
+      "learnLinks": [
+        { "id": 1, "link": "Process" },
+        { "id": 2, "link": "About us" },
+        { "id": 3, "link": "Blog" },
+        { "id": 4, "link": "News" },
+        { "id": 5, "link": "Beyond The Bottle" }
+      ],
+      "contactLinks": [
+        { "id": 1, "link": "+91 0000-000-000" },
+        { "id": 2, "link": "sample@example.com" }
+      ]
+    },
+    "modals": {
+      "login": "https://static.wixstatic.com/media/2c0034_92348ac95936499693d71c23e0ba1b74~mv2.png",
+      "signup": "https://static.wixstatic.com/media/2c0034_120b994eb4044695afef5a324a03c4be~mv2.png"
+    }
+  },
+  "shop": {
+    "filters": [
+      {
+        "id": 1,
+        "submenu": [
+          { "id": 1, "name": "all" },
+          { "id": 2, "name": "juices" },
+          { "id": 3, "name": "cleanses" },
+          { "id": 4, "name": "almond milks" },
+          { "id": 5, "name": "protein milkshakes" },
+          { "id": 6, "name": "200ml" },
+          { "id": 7, "name": "250ml" },
+          { "id": 8, "name": "1litre" },
+          { "id": 9, "name": "pack of 5" },
+          { "id": 10, "name": "pack of 10" },
+          { "id": 11, "name": "pack of 15" },
+          { "id": 12, "name": "pack of 20" },
+          { "id": 13, "name": "pack of 25" },
+          { "id": 14, "name": "pack of 30" }
+        ]
+      }
+    ],
+    "products": [
+      {
+        "id": 1,
+        "image": "https://static.wixstatic.com/media/2c0034_f24ab516f08e433d97ef724e968c85ea~mv2.png",
+        "description": "Valencia orange reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Valencia Orange",
+        "category": "juices",
+        "size": "250ml",
+        "price": 60,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Valencia Orange Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "image": "https://static.wixstatic.com/media/2c0034_2844dfb7b6dd4845ae990f66e13b2816~mv2.png",
+        "description": "Valencia orange reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Valencia Orange",
+        "category": "juices",
+        "size": "1litre",
+        "price": 180,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Valencia Orange Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "image": "https://static.wixstatic.com/media/2c0034_fcfcbd14f7364a329e121c15bdae53e0~mv2.png",
+        "description": "Sugarcane reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Sugarcane",
+        "category": "juices",
+        "size": "250ml",
+        "price": 60,
+        "pack": 5,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Sugarcane Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "image": "https://static.wixstatic.com/media/2c0034_6c3685aef9ae4e89bbd73a659c494f78~mv2.png",
+        "description": "Sugarcane reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Sugarcane",
+        "category": "juices",
+        "size": "200ml",
+        "price": 40,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Sugarcane Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "image": "https://static.wixstatic.com/media/2c0034_612a8de8f44c442990519d35e4d7e937~mv2.png",
+        "description": "Sugarcane reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Sugarcane",
+        "category": "juices",
+        "size": "1litre",
+        "price": 130,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Sugarcane Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "image": "https://static.wixstatic.com/media/2c0034_79251c1e19e14cfcab2f300b2120cc3b~mv2.png",
+        "description": "Pomegranate reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Pomegranate",
+        "category": "juices",
+        "size": "250ml",
+        "price": 80,
+        "pack": 10,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Pomegranate Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "image": "https://static.wixstatic.com/media/2c0034_1c132db29731403789f75e2b31cc2c0d~mv2.png",
+        "description": "Pomegranate reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Pomegranate",
+        "category": "juices",
+        "size": "200ml",
+        "price": 60,
+        "pack": 15,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Pomegranate Amount per serving",
+            "weight": "200ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "200ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "image": "https://static.wixstatic.com/media/2c0034_e9c7175d95f54a27b75d8349f3bc1204~mv2.png",
+        "description": "Pomegranate reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Pomegranate",
+        "category": "juices",
+        "size": "1litre",
+        "price": 180,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Pomegranate Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "image": "https://static.wixstatic.com/media/2c0034_a4eb2f35e9f349bf81d0fc8eaf11b954~mv2.png",
+        "description": "Mango reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Mango",
+        "category": "juices",
+        "size": "200ml",
+        "price": 60,
+        "pack": 30,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Mango Amount per serving",
+            "weight": "200ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "200ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "image": "https://static.wixstatic.com/media/2c0034_d4121f5d611f4e0a83a4c54b4103f089~mv2.png",
+        "description": "Mango reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Mango",
+        "category": "juices",
+        "size": "1litre",
+        "price": 220,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Mango Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "image": "https://static.wixstatic.com/media/2c0034_4305e9e4a9dc4c6990bfd742c2f8d9cf~mv2.png",
+        "description": "Lean reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Lean",
+        "category": "juices",
+        "size": "200ml",
+        "price": 40,
+        "pack": 25,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Lean Amount per serving",
+            "weight": "200ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "200ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "image": "https://static.wixstatic.com/media/2c0034_7f88aade740240309e6843af061891ef~mv2.png",
+        "description": "Guava reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Guava",
+        "category": "juices",
+        "size": "1litre",
+        "price": 120,
+        "pack": 5,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Guava Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "image": "https://static.wixstatic.com/media/2c0034_cd8ec54ec98442aaa51fcadf2d4ad079~mv2.png",
+        "description": "Guava reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Guava",
+        "category": "juices",
+        "size": "250ml",
+        "price": 60,
+        "pack": 15,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Guava Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "image": "https://static.wixstatic.com/media/2c0034_49392daa12bc4e05bf09beb40b0905b6~mv2.png",
+        "description": "Lean reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Lean",
+        "category": "juices",
+        "size": "1litre",
+        "price": 110,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Lean Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "image": "https://static.wixstatic.com/media/2c0034_96e38bf0cd70483aa6deeb49317d0ad3~mv2.png",
+        "description": "Coconut Water reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Coconut Water",
+        "category": "juices",
+        "size": "200ml",
+        "price": 45,
+        "pack": 10,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Coconut Water Amount per serving",
+            "weight": "200ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "200ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "image": "https://static.wixstatic.com/media/2c0034_1b259f9195594c399d315d434f870bae~mv2.png",
+        "description": "Coconut Water reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Coconut Water",
+        "category": "juices",
+        "size": "1litre",
+        "price": 100,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Coconut Water Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "image": "https://static.wixstatic.com/media/2c0034_93728221e9914411abea9ff4531c5b42~mv2.png",
+        "description": "Almond Milk Plain reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Almond Milk Plain",
+        "category": "juices",
+        "size": "250ml",
+        "price": 65,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Almond Milk Plain Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "image": "https://static.wixstatic.com/media/2c0034_1c5a8850dd4f4fb2b6ce2829e04191fa~mv2.png",
+        "description": "Almond Milk Plain reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Almond Milk Plain",
+        "category": "juices",
+        "size": "1litre",
+        "price": 165,
+        "pack": 20,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Almond Milk Plain Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "image": "https://static.wixstatic.com/media/2c0034_9a1992e7e06a41e197057effab6ff588~mv2.png",
+        "description": "Almond Milk Cacao reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Almond Milk Cacao",
+        "category": "juices",
+        "size": "250ml",
+        "price": 65,
+        "pack": 20,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Almond Milk Cacao Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "image": "https://static.wixstatic.com/media/2c0034_5519a3964445466c8e9d6638f7d9427a~mv2.png",
+        "description": "Almond Milk Dates reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Almond Milk Dates",
+        "category": "juices",
+        "size": "250ml",
+        "price": 85,
+        "pack": 15,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Almond Milk Dates Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "image": "https://static.wixstatic.com/media/2c0034_9f185afa56fd47a09448e6496aa687c1~mv2.png",
+        "description": "Almond Milk Cacao reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Almond Milk Cacao",
+        "category": "juices",
+        "size": "1litre",
+        "price": 200,
+        "pack": 5,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Almond Milk Cacao Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "image": "https://static.wixstatic.com/media/2c0034_44acfda9e8724f7788377f713c3b273f~mv2.png",
+        "description": "Almond Milk Dates reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Almond Milk Dates",
+        "category": "juices",
+        "size": "1litre",
+        "price": 180,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Almond Milk Dates Amount per serving",
+            "weight": "1litre",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "1litre"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "image": "https://static.wixstatic.com/media/2c0034_bf14ecdbe04149e885d8463948f7db20~mv2.png",
+        "description": "Coffee reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Coffee",
+        "category": "juices",
+        "size": "250ml",
+        "price": 60,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Coffee Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "image": "https://static.wixstatic.com/media/2c0034_009e9b992890495bb6ec7e44e4955e98~mv2.png",
+        "description": "Banana reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Banana",
+        "category": "juices",
+        "size": "250ml",
+        "price": 40,
+        "pack": 0,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Banana Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "image": "https://static.wixstatic.com/media/2c0034_4b4a1039e0b945c3945d8228c8734930~mv2.png",
+        "description": "Chocolate reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
+        "heading": "Chocolate",
+        "category": "juices",
+        "size": "250ml",
+        "price": 50,
+        "pack": 30,
+        "detailsTable": [
+          {
+            "id": 1,
+            "details": "Chocolate Amount per serving",
+            "weight": "250ml",
+            "glass250ml": ""
+          },
+          {
+            "id": 2,
+            "details": "Calories",
+            "weight": "",
+            "glass250ml": "123.45Keal"
+          },
+          {
+            "id": 3,
+            "details": "Size",
+            "weight": "",
+            "glass250ml": "250ml"
+          },
+          {
+            "id": 4,
+            "details": "Total Fat",
+            "weight": "0.10g",
+            "glass250ml": "0.50%"
+          },
+          {
+            "id": 5,
+            "details": "Sodium",
+            "weight": "166.00mg",
+            "glass250ml": "7.93%"
+          }
+        ]
+      }
+    ]
+  }
+}

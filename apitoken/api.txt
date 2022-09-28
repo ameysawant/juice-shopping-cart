@@ -1,0 +1,7 @@
+HOMEPAGE API -
+https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=w51mc1qfwmv531vo7jjlfwt4o9vpf78q8x5x9lda
+
+SHOP API -
+https://api.json-generator.com/templates/Lh1laBndp08x/data?access_token=b6cs7s6wwlud2ovsbfazv6owpmws96wqlsvnny0s
+
+

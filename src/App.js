@@ -9,11 +9,11 @@ import SignUp from "./components/modals/SignUp";
 const App = () => {
   return (
     <>
-      {/* <Header /> */}
-      {/* <Homepage /> */}
+      <Header />
+      <Homepage />
+      <Footer />
       {/* <Products /> */}
-      {/* <Footer /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <SignUp /> */}
     </>
   );
