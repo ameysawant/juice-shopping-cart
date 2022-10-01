@@ -1,28 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchYoutube } from "../../../redux/actions/homepage/YoutubeActions";
 import "./youtube.css";
 
 const Youtube = () => {
+  const dispatch = useDispatch();
+  const youtubeData = useSelector((state) => state.youtubeReducer.youtubeData);
+  // console.log(youtubeData);
+
+  useEffect(() => {
+    getYoutubeApi();
+  }, []);
+
+  const getYoutubeApi = async () => {
+    // const apikey = process.env.REACT_APP_API_KEY;
+    // const response = await fetch(
+    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+    // );
+    const response = await fetch(`http://localhost:8000/homepage`);
+    const data = await response.json();
+    // console.log(data);
+    dispatch(fetchYoutube(data.youtube));
+  };
+
   return (
     <>
-      <div
-        className="dvYoutube"
-        style={{
-          background: `url(https://static.wixstatic.com/media/2c0034_fc43f01850924a8e9cf5695d060ff42f~mv2.png)`,
-        }}
-      >
-        <div className="opacity text-center">
-          <h2 className="heading-lg">Only Juice Nothing Else</h2>
-          <p className="py-3">
-            In publishing and graphic design, Lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual.In publishing and graphic
-            design, Lorem ipsum is a placeholder text commonly used to
-            demonstrate the visual.
-          </p>
-          <button className="btn">
-            <i className="fa-solid fa-play"></i>
-          </button>
+      {youtubeData && (
+        <div
+          className="dvYoutube"
+          style={{
+            background: `url(${youtubeData.img})`,
+          }}
+        >
+          <div className="opacity text-center">
+            <h2 className="heading-lg">{youtubeData.heading}</h2>
+            <p className="py-3">{youtubeData.description}</p>
+            <button className="btn">
+              <i className="fa-solid fa-play"></i>
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

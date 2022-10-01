@@ -1,67 +1,64 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAbout } from "../../../redux/actions/homepage/AboutActions";
 import "./about.css";
 
 const About = () => {
+  const dispatch = useDispatch();
+  const aboutData = useSelector((state) => state.aboutReducer.aboutData);
+  const points = useSelector((state) => state.aboutReducer.aboutData.points);
+  // console.log(aboutData);
+
+  useEffect(() => {
+    getAboutApi();
+  }, []);
+
+  const getAboutApi = async () => {
+    // const apikey = process.env.REACT_APP_API_KEY;
+    // const response = await fetch(
+    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+    // );
+    const response = await fetch(`http://localhost:8000/homepage`);
+    const data = await response.json();
+    // console.log(data.aboutus);
+    dispatch(fetchAbout(data.aboutus));
+  };
+
   return (
     <>
-      <div className="dvAbout py-5">
-        <div className="container-lg">
-          <div className="row">
-            <div className="col-12 mb-4 text-center">
-              <h2 className="heading-lg">Juice Shop</h2>
-              <p>
-                In publishing and graphic design, Lorem ipsum is a placeholder
-                text commonly used to demonstrate the visual.In publishing and
-                graphic design.
-              </p>
+      {aboutData && (
+        <div className="dvAbout py-5">
+          <div className="container-lg">
+            <div className="row">
+              <div className="col-12 mb-4 text-center">
+                <h2 className="heading-lg">{aboutData.heading}</h2>
+                <p>{aboutData.description}</p>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-6 col-md-4 text-center mb-4">
-              <img
-                width={50}
-                src="https://static.wixstatic.com/media/2c0034_ca86212b4cb8403a91414198dcb82618~mv2.png"
-                alt=""
-                className="img-fluid"
-              />
-              <h6 className="heading-sm py-2">Always Fresh</h6>
-              <p>
-                Always Fresh Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard.
-              </p>
-            </div>
-            <div className="col-sm-6 col-md-4 text-center mb-4">
-              <img
-                width={50}
-                src="https://static.wixstatic.com/media/2c0034_e72cf1ca3caa436cb4016c99f5a98c7c~mv2.png"
-                alt=""
-                className="img-fluid"
-              />
-              <h6 className="heading-sm py-2">Always Fresh</h6>
-              <p>
-                Always Fresh Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard.
-              </p>
-            </div>
-            <div className="col-sm-6 col-md-4 text-center mb-4">
-              <img
-                width={50}
-                src="https://static.wixstatic.com/media/2c0034_89082b03c72343ba8c281296a5ca6e40~mv2.png"
-                alt=""
-                className="img-fluid"
-              />
-              <h6 className="heading-sm py-2">Always Fresh</h6>
-              <p>
-                Always Fresh Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard.
-              </p>
+            <div className="row">
+              {points &&
+                points.map((item) => {
+                  const { id, img, heading, description } = item;
+                  return (
+                    <div
+                      key={id}
+                      className="col-sm-6 col-md-4 text-center mb-4"
+                    >
+                      <img
+                        width={50}
+                        src={img}
+                        alt={heading}
+                        className="img-fluid"
+                      />
+                      <h6 className="heading-sm py-2">{heading}</h6>
+                      <p>{description}</p>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

@@ -1,79 +1,61 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./team.css";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchTeam } from "../../../redux/actions/homepage/TeamActions";
 
 const Team = () => {
+  const dispatch = useDispatch();
+  const teamData = useSelector((state) => state.teamReducer.teamData);
+  const teamMembers = useSelector(
+    (state) => state.teamReducer.teamData.teamMembers
+  );
+  console.log(teamMembers);
+
+  useEffect(() => {
+    getTeamApi();
+  }, []);
+
+  const getTeamApi = async () => {
+    // const apikey = process.env.REACT_APP_API_KEY;
+    // const response = await fetch(
+    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+    // );
+    const response = await fetch(`http://localhost:8000/homepage`);
+    const data = await response.json();
+    // console.log(data);
+    dispatch(fetchTeam(data.team));
+  };
+
   return (
     <>
-      <div className="dvTeam py-5">
-        <div className="container-lg">
-          <div className="row mb-4">
-            <div className="col-12 text-center">
-              <h2 className="heading-lg">Our Team</h2>
-              <p>
-                In publishing and graphic design, Lorem ipsum is a placeholder
-                text commonly used to demonstrate the visual.In publishing and
-                graphic design.
-              </p>
+      {teamData && (
+        <div className="dvTeam py-5">
+          <div className="container-lg">
+            <div className="row mb-4">
+              <div className="col-12 text-center">
+                <h2 className="heading-lg">{teamData.heading}</h2>
+                <p>{teamData.description}</p>
+              </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-6 col-md-4 col-lg-3 text-center mb-3">
-              <img
-                src="https://static.wixstatic.com/media/2c0034_ec508c75badf4928aae7a595994135d8~mv2.png"
-                className="img-fluid"
-                alt=""
-              />
-              <h6 className="heading-sm">Andrea</h6>
-              <p>CEO</p>
-            </div>
-            <div className="col-6 col-md-4 col-lg-3 text-center mb-3">
-              <img
-                src="https://static.wixstatic.com/media/2c0034_ec508c75badf4928aae7a595994135d8~mv2.png"
-                className="img-fluid"
-                alt=""
-              />
-              <h6 className="heading-sm">Andrea</h6>
-              <p>CEO</p>
-            </div>
-            <div className="col-6 col-md-4 col-lg-3 text-center mb-3">
-              <img
-                src="https://static.wixstatic.com/media/2c0034_ec508c75badf4928aae7a595994135d8~mv2.png"
-                className="img-fluid"
-                alt=""
-              />
-              <h6 className="heading-sm">Andrea</h6>
-              <p>CEO</p>
-            </div>
-            <div className="col-6 col-md-4 col-lg-3 text-center mb-3">
-              <img
-                src="https://static.wixstatic.com/media/2c0034_ec508c75badf4928aae7a595994135d8~mv2.png"
-                className="img-fluid"
-                alt=""
-              />
-              <h6 className="heading-sm">Andrea</h6>
-              <p>CEO</p>
-            </div>
-            <div className="col-6 col-md-4 col-lg-3 offset-lg-3 text-center mb-3">
-              <img
-                src="https://static.wixstatic.com/media/2c0034_ec508c75badf4928aae7a595994135d8~mv2.png"
-                className="img-fluid"
-                alt=""
-              />
-              <h6 className="heading-sm">Andrea</h6>
-              <p>CEO</p>
-            </div>
-            <div className="col-6 col-md-4 col-lg-3 text-center mb-3">
-              <img
-                src="https://static.wixstatic.com/media/2c0034_ec508c75badf4928aae7a595994135d8~mv2.png"
-                className="img-fluid"
-                alt=""
-              />
-              <h6 className="heading-sm">Andrea</h6>
-              <p>CEO</p>
+            <div className="row">
+              {teamMembers &&
+                teamMembers.map((item) => {
+                  const { id, img, heading, designation } = item;
+                  return (
+                    <div
+                      key={id}
+                      className="col-6 col-md-4 col-lg-3 text-center mb-3"
+                    >
+                      <img src={img} className="img-fluid" alt={heading} />
+                      <h6 className="heading-sm">{heading}</h6>
+                      <p>{designation}</p>
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

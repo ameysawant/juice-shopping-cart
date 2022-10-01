@@ -47,6 +47,11 @@ body {
   line-height: 1.5;
 }
 
+/*swiper css*/
+.swiper {
+  z-index: 0 !important;
+}
+
 /*helper classes*/
 .text-red {
   color: red;

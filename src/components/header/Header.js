@@ -16,13 +16,14 @@ const Header = () => {
   }, []);
 
   const getHeaderApi = async () => {
-    const apikey = process.env.REACT_APP_API_KEY;
-    const response = await fetch(
-      `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    );
+    // const apikey = process.env.REACT_APP_API_KEY;
+    // const response = await fetch(
+    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+    // );
+    const response = await fetch(`http://localhost:8000/homepage`);
     const data = await response.json();
-    console.log(data.homepage.header);
-    dispatch(fetchHeader(data.homepage.header));
+    // console.log(data);
+    dispatch(fetchHeader(data.header));
   };
 
   return (
