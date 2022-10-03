@@ -1,10 +1,12 @@
+import { actionTypes } from "../../types/actionTypes";
+
 const youtubeiState = {
   youtubeData: {},
 };
 
 export const youtubeReducer = (state = youtubeiState, action) => {
   switch (action.type) {
-    case "FETCH_YOUTUBE":
+    case actionTypes.FETCH_YOUTUBE:
       return {
         ...state,
         youtubeData: action.payload,

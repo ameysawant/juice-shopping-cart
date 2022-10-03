@@ -1,6 +1,8 @@
+import { actionTypes } from "../../types/actionTypes";
+
 export const fetchAbout = (data) => {
   return {
-    type: "FETCH_ABOUT",
+    type: actionTypes.FETCH_ABOUT,
     payload: data,
   };
 };

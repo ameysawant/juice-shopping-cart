@@ -1,10 +1,12 @@
+import { actionTypes } from "../../types/actionTypes";
+
 const productSlideriState = {
   productSliderData: [],
 };
 
 export const productSliderReducer = (state = productSlideriState, action) => {
   switch (action.type) {
-    case "FETCH_PRODUCTSLIDER":
+    case actionTypes.FETCH_PRODUCTSLIDER:
       return {
         ...state,
         productSliderData: action.payload,

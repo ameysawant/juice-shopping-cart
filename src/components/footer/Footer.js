@@ -1,114 +1,126 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchFooter } from "../../redux/actions/footer/FooterActions";
 import "./footer.css";
 
 const Footer = () => {
+  const dispatch = useDispatch();
+  const footerData = useSelector((state) => state.footerReducer.footerData);
+  const contactLinks = useSelector(
+    (state) => state.footerReducer.footerData.contactLinks
+  );
+  const shopLinks = useSelector(
+    (state) => state.footerReducer.footerData.shopLinks
+  );
+  const learnLinks = useSelector(
+    (state) => state.footerReducer.footerData.learnLinks
+  );
+  // console.log(footerData);
+
+  useEffect(() => {
+    getFooterApi();
+  }, []);
+
+  const getFooterApi = async () => {
+    // const apikey = process.env.REACT_APP_API_KEY;
+    // const response = await fetch(
+    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+    // );
+    const response = await fetch(`http://localhost:8000/homepage`);
+    const data = await response.json();
+    // console.log(data.footer);
+    dispatch(fetchFooter(data.footer));
+  };
+
   return (
-    <div className="dvFooter pt-3 pb-3">
-      <div className="container-lg">
-        <div className="row dvLogo">
-          <div className="col-12 text-center mb-3">
-            <img
-              width={50}
-              src="https://static.wixstatic.com/media/2c0034_a27b95faba1d432fbddcf6ac4e9683ba~mv2.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12 col-md-6 col-xl-3 mb-3">
-            <div className="row">
-              <div className="col-6 col-md-6 col-xl-12 mb-3">
-                <h6 className="heading-sm">AboutUs</h6>
-                <p>
-                  Footer Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
-                </p>
+    <>
+      {footerData && (
+        <div className="dvFooter pt-3 pb-3">
+          <div className="container-lg">
+            <div className="row dvLogo">
+              <div className="col-12 text-center mb-3">
+                <img width={50} src={footerData.img} alt="" />
               </div>
-              <div className="col-6 col-md-6 col-xl-12 mb-3">
-                <h6 className="heading-sm">Contact Us</h6>
-                <p>+91 0000-000-000</p>
-                <p>sample@example.com</p>
+            </div>
+            <div className="row">
+              <div className="col-12 col-md-6 col-xl-3 mb-3">
+                <div className="row">
+                  <div className="col-6 col-md-6 col-xl-12 mb-3">
+                    <h6 className="heading-sm">{footerData.about}</h6>
+                    <p>{footerData.aboutText}</p>
+                  </div>
+                  <div className="col-6 col-md-6 col-xl-12 mb-3">
+                    <h6 className="heading-sm">{footerData.contact}</h6>
+                    {contactLinks &&
+                      contactLinks.map((item) => {
+                        const { id, link } = item;
+                        return <p key={id}>{link}</p>;
+                      })}
+                  </div>
+                </div>
+              </div>
+              <div className="col-6 col-md-3 mb-3 dvLinks">
+                <h6 className="heading-sm">{footerData.shop}</h6>
+                <ul>
+                  {shopLinks &&
+                    shopLinks.map((item) => {
+                      const { id, link } = item;
+                      return (
+                        <li key={id}>
+                          <a href="">{link}</a>
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+              <div className="col-6 col-md-3 mb-3 dvLinks">
+                <h6 className="heading-sm">{footerData.learn}</h6>
+                <ul>
+                  {learnLinks &&
+                    learnLinks.map((item) => {
+                      const { id, link } = item;
+                      return (
+                        <li key={id}>
+                          <a href="">{link}</a>
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+              <div className="col-12 col-xl-3 dvSubscribe mb-3">
+                <h6 className="heading-sm">Subscribe Us</h6>
+                <form>
+                  <input
+                    type="text"
+                    className="f-control"
+                    placeholder="email@example"
+                  />
+                  <button className="btn">
+                    <i className="fa-solid fa-paper-plane"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div className="row dvSocial">
+              <div className="col-12 text-center mb-2">
+                <a href="" className="mx-1">
+                  <i className="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="" className="mx-1">
+                  <i className="fa-brands fa-instagram"></i>
+                </a>
+                <a href="" className="mx-1">
+                  <i className="fa-brands fa-twitter"></i>
+                </a>
+              </div>
+              <div className="col-12 text-center">
+                <p>{footerData.copyRightText}</p>
               </div>
             </div>
           </div>
-          <div className="col-6 col-md-3 mb-3 dvLinks">
-            <h6 className="heading-sm">Shop</h6>
-            <ul>
-              <li>
-                <a href="">Process</a>
-              </li>
-              <li>
-                <a href="">About Us</a>
-              </li>
-              <li>
-                <a href="">Blog</a>
-              </li>
-              <li>
-                <a href="">News</a>
-              </li>
-              <li>
-                <a href="">Beyond the Bottle</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-6 col-md-3 mb-3 dvLinks">
-            <h6 className="heading-sm">Learn</h6>
-            <ul>
-              <li>
-                <a href="">Subscriptions</a>
-              </li>
-              <li>
-                <a href="">Value Packs</a>
-              </li>
-              <li>
-                <a href="">Cleanses</a>
-              </li>
-              <li>
-                <a href="">Juices</a>
-              </li>
-              <li>
-                <a href="">Almons Milks</a>
-              </li>
-              <li>
-                <a href="">Protein Milkshake</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-12 col-xl-3 dvSubscribe mb-3">
-            <h6 className="heading-sm">Subscribe Us</h6>
-            <form>
-              <input
-                type="text"
-                className="f-control"
-                placeholder="email@example"
-              />
-              <button className="btn">
-                <i className="fa-solid fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
         </div>
-        <div className="row dvSocial">
-          <div className="col-12 text-center mb-2">
-            <a href="" className="mx-1">
-              <i className="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="" className="mx-1">
-              <i className="fa-brands fa-instagram"></i>
-            </a>
-            <a href="" className="mx-1">
-              <i className="fa-brands fa-twitter"></i>
-            </a>
-          </div>
-          <div className="col-12 text-center">
-            <p>
-              Copyright &copy; 2022 All Rights Reserved. Website designed and
-              developed by Kishori Tutorials
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

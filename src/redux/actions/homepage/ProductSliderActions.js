@@ -1,6 +1,8 @@
+import { actionTypes } from "../../types/actionTypes";
+
 export const fetchProductSlider = (data) => {
   return {
-    type: "FETCH_PRODUCTSLIDER",
+    type: actionTypes.FETCH_PRODUCTSLIDER,
     payload: data,
   };
 };

@@ -1,10 +1,12 @@
+import { actionTypes } from "../../types/actionTypes";
+
 const teamiState = {
   teamData: [],
 };
 
 export const teamReducer = (state = teamiState, action) => {
   switch (action.type) {
-    case "FETCH_TEAM":
+    case actionTypes.FETCH_TEAM:
       return {
         ...state,
         teamData: action.payload,

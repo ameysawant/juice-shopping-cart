@@ -5,6 +5,7 @@ import { youtubeReducer } from "./homepage/YoutubeReducer";
 import { aboutReducer } from "./homepage/AboutReducer";
 import { productSliderReducer } from "./homepage/ProductSliderReducer";
 import { teamReducer } from "./homepage/TeamReducer";
+import { footerReducer } from "./footer/FooterReducer";
 
 const rootReducer = combineReducers({
   headerReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   aboutReducer,
   productSliderReducer,
   teamReducer,
+  footerReducer,
 });
 
 export default rootReducer;

@@ -9,7 +9,7 @@ const Team = () => {
   const teamMembers = useSelector(
     (state) => state.teamReducer.teamData.teamMembers
   );
-  console.log(teamMembers);
+  // console.log(teamMembers);
 
   useEffect(() => {
     getTeamApi();

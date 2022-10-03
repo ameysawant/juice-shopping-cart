@@ -1,8 +1,8 @@
 import { actionTypes } from "../../types/actionTypes";
 
-export const fetchHeader = (data) => {
+export const fetchFooter = (data) => {
   return {
-    type: actionTypes.FETCH_HEADER,
+    type: actionTypes.FETCH_FOOTER,
     payload: data,
   };
 };
