@@ -2,6 +2,7 @@ import { actionTypes } from "../../types/actionTypes";
 
 const headeriState = {
   hData: {},
+  background: "bg-transparent",
 };
 
 export const headerReducer = (state = headeriState, action) => {
@@ -10,6 +11,11 @@ export const headerReducer = (state = headeriState, action) => {
       return {
         ...state,
         hData: action.payload, //data update
+      };
+    case actionTypes.CHANGE_NAV_BG:
+      return {
+        ...state,
+        background: action.payload, //data update
       };
     default:
       return state;

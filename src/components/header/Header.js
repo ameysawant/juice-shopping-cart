@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import "./header.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchHeader } from "../../redux/actions/header/HeaderActions";
+import {
+  changeNavBg,
+  fetchHeader,
+} from "../../redux/actions/header/HeaderActions";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -9,11 +12,19 @@ const Header = () => {
   const parentLinks = useSelector(
     (state) => state.headerReducer.hData.parentLinks
   );
-  // console.log(headerData);
+  const bgColour = useSelector((state) => state.headerReducer.background);
+  // console.log(bgColour);
 
   useEffect(() => {
     getHeaderApi();
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBG);
+    return () => {
+      window.removeEventListener("scroll", changeBG);
+    };
+  }, [bgColour]);
 
   const getHeaderApi = async () => {
     // const apikey = process.env.REACT_APP_API_KEY;
@@ -26,9 +37,17 @@ const Header = () => {
     dispatch(fetchHeader(data.header));
   };
 
+  const changeBG = () => {
+    if (window.scrollY > 0) {
+      dispatch(changeNavBg("bg-white"));
+    } else {
+      dispatch(changeNavBg("bg-transparent"));
+    }
+  };
+
   return (
     <>
-      <div className="dvHeader">
+      <div className={`dvHeader ${bgColour}`}>
         <div className="container-lg">
           <div className="row align-items-center pt-1">
             <div className="col d-lg-none">

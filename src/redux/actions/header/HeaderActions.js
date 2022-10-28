@@ -6,3 +6,10 @@ export const fetchHeader = (data) => {
     payload: data,
   };
 };
+
+export const changeNavBg = (bgColor) => {
+  return {
+    type: actionTypes.CHANGE_NAV_BG,
+    payload: bgColor,
+  };
+};
