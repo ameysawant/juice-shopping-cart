@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchYoutube } from "../../../redux/actions/homepage/YoutubeActions";
+import {
+  fetchYoutube,
+  openVideo,
+} from "../../../redux/actions/homepage/YoutubeActions";
+import YoutubeVideo from "../../modals/YoutubeVideo";
 import "./youtube.css";
 
 const Youtube = () => {
   const dispatch = useDispatch();
   const youtubeData = useSelector((state) => state.youtubeReducer.youtubeData);
-  // console.log(youtubeData);
+  const isClicked = useSelector((state) => state.youtubeReducer.isClicked);
+  console.log(isClicked);
 
   useEffect(() => {
     getYoutubeApi();
@@ -35,12 +40,14 @@ const Youtube = () => {
           <div className="opacity text-center">
             <h2 className="heading-lg">{youtubeData.heading}</h2>
             <p className="py-3">{youtubeData.description}</p>
-            <button className="btn">
+            <button className="btn" onClick={() => dispatch(openVideo(true))}>
               <i className="fa-solid fa-play"></i>
             </button>
           </div>
         </div>
       )}
+
+      {isClicked ? <YoutubeVideo isClicked={isClicked} /> : ""}
     </>
   );
 };
