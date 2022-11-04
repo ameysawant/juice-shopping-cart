@@ -47,6 +47,17 @@ body {
   line-height: 1.5;
 }
 
+/*mainslider, productslider bg*/
+.bg-yellow {
+  background-color: #e4c624 !important;
+}
+.bg-green {
+  background-color: #81cb84 !important;
+}
+.bg-red {
+  background-color: #ff8989 !important;
+}
+
 /*header onscroll nav bg*/
 .bg-white {
   background-color: rgba(255, 255, 255, 0.7);

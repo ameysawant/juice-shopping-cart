@@ -42,6 +42,7 @@ const ProductSlider = () => {
         {productSliderData &&
           productSliderData.map((item) => {
             const { id, img, heading, description, aboutJuice } = item;
+            const bgColours = ["", "bg-yellow", "bg-green", "bg-red"];
             return (
               <SwiperSlide key={id}>
                 <div className="dvProductSlider">
@@ -54,7 +55,9 @@ const ProductSlider = () => {
                           className="img-fluid d-block"
                         />
                       </div>
-                      <div className="col-12 col-md-6 bg-color py-4 d-flex align-items-center">
+                      <div
+                        className={`col-12 col-md-6 ${bgColours[id]} py-4 d-flex align-items-center`}
+                      >
                         <div>
                           <h2 className="heading-lg">{heading}</h2>
                           <ul className="points">

@@ -11,7 +11,7 @@ const Youtube = () => {
   const dispatch = useDispatch();
   const youtubeData = useSelector((state) => state.youtubeReducer.youtubeData);
   const isClicked = useSelector((state) => state.youtubeReducer.isClicked);
-  console.log(isClicked);
+  // console.log(isClicked);
 
   useEffect(() => {
     getYoutubeApi();

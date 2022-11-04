@@ -44,7 +44,9 @@ const Team = () => {
                   return (
                     <div
                       key={id}
-                      className="col-6 col-md-4 col-lg-3 text-center mb-3"
+                      className={`col-6 col-md-4 col-lg-3 text-center mb-3 ${
+                        id === 5 ? "offset-lg-3" : ""
+                      }`}
                     >
                       <img src={img} className="img-fluid" alt={heading} />
                       <h6 className="heading-sm">{heading}</h6>

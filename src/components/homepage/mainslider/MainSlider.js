@@ -48,9 +48,12 @@ const MainSlider = () => {
         {mainSliderData &&
           mainSliderData.map((item) => {
             const { id, img, heading, description, smallHeading } = item;
+            const bgColours = ["", "bg-yellow", "bg-green", "bg-red"];
             return (
               <SwiperSlide key={id}>
-                <div className="dvMainSlider d-flex align-items-center">
+                <div
+                  className={`dvMainSlider d-flex align-items-center ${bgColours[id]}`} //1
+                >
                   <div className="container">
                     <div className="row">
                       <div className="col-md-6 text-center">
