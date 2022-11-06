@@ -3,8 +3,11 @@ import "./header.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   changeNavBg,
+  closeSlideMenu,
   fetchHeader,
+  openSlideMenu,
 } from "../../redux/actions/header/HeaderActions";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -13,7 +16,8 @@ const Header = () => {
     (state) => state.headerReducer.hData.parentLinks
   );
   const bgColour = useSelector((state) => state.headerReducer.background);
-  // console.log(bgColour);
+  const isSlide = useSelector((state) => state.headerReducer.isSlide);
+  console.log(isSlide);
 
   useEffect(() => {
     getHeaderApi();
@@ -51,13 +55,24 @@ const Header = () => {
         <div className="container-lg">
           <div className="row align-items-center pt-1">
             <div className="col d-lg-none">
-              <i className="fa-solid fa-bars"></i>
+              <i
+                className="fa-solid fa-bars"
+                onClick={() => dispatch(openSlideMenu(true))}
+              ></i>
             </div>
             <div className="col col-lg-auto text-center text-lg-left">
-              <img width={50} src={logo && logo.url} alt="" />
+              <Link to="/">
+                <img width={50} src={logo && logo.url} alt="" />
+              </Link>
             </div>
-            <div className="dvSlideMenu col-lg-auto px-0 px-lg-3">
-              <button className="btn btn-black closeBtn d-lg-none">
+            <div
+              className="dvSlideMenu col-lg-auto px-0 px-lg-3"
+              style={{ left: isSlide ? "0" : "-100%" }}
+            >
+              <button
+                className="btn btn-black closeBtn d-lg-none"
+                onClick={() => dispatch(closeSlideMenu(false))}
+              >
                 <i className="fa-solid fa-xmark"></i>
               </button>
               <ul className="dvMenu">
@@ -66,7 +81,12 @@ const Header = () => {
                     const { id, link } = item;
                     return (
                       <li key={id}>
-                        <a href="">{link}</a>
+                        <Link
+                          to={link}
+                          onClick={() => dispatch(closeSlideMenu(false))}
+                        >
+                          {link}
+                        </Link>
                       </li>
                     );
                   })}

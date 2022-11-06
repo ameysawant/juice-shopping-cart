@@ -3,6 +3,7 @@ import { actionTypes } from "../../types/actionTypes";
 const headeriState = {
   hData: {},
   background: "bg-transparent",
+  isSlide: false,
 };
 
 export const headerReducer = (state = headeriState, action) => {
@@ -16,6 +17,16 @@ export const headerReducer = (state = headeriState, action) => {
       return {
         ...state,
         background: action.payload, //data update
+      };
+    case actionTypes.OPEN_SLIDE_MENU:
+      return {
+        ...state,
+        isSlide: action.payload, //true
+      };
+    case actionTypes.CLOSE_SLIDE_MENU:
+      return {
+        ...state,
+        isSlide: action.payload, //false
       };
     default:
       return state;

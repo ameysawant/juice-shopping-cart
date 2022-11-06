@@ -13,3 +13,17 @@ export const changeNavBg = (bgColor) => {
     payload: bgColor,
   };
 };
+
+export const openSlideMenu = (data) => {
+  return {
+    type: actionTypes.OPEN_SLIDE_MENU,
+    payload: data,
+  };
+};
+
+export const closeSlideMenu = (data) => {
+  return {
+    type: actionTypes.CLOSE_SLIDE_MENU,
+    payload: data,
+  };
+};
