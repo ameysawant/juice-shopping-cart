@@ -17,7 +17,7 @@ const Header = () => {
   );
   const bgColour = useSelector((state) => state.headerReducer.background);
   const isSlide = useSelector((state) => state.headerReducer.isSlide);
-  console.log(isSlide);
+  // console.log(isSlide);
 
   useEffect(() => {
     getHeaderApi();

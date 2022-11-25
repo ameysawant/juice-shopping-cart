@@ -10,13 +10,17 @@ const Index = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="dvFilter modal col-lg-3 col-xl-2">
-            <Filter />
+            <div className="sticky-top top90">
+              <Filter />
+            </div>
           </div>
           <div className="dvProductListing col-12 col-lg-6 col-xl-7 col-xxl-8">
             <ProductListing />
           </div>
           <div className="dvCart modal col-lg-3 col-xl-3 col-xxl-2">
-            <Cart />
+            <div className="sticky-top top90">
+              <Cart />
+            </div>
           </div>
         </div>
       </div>

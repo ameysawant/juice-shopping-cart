@@ -47,6 +47,13 @@ body {
   line-height: 1.5;
 }
 
+/*sticky-top*/
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
 /*mainslider, productslider bg*/
 .bg-yellow {
   background-color: #e4c624 !important;

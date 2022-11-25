@@ -1,3 +1,7 @@
+.dvCart .sticky-top.top90 {
+  top: 90px;
+}
+
 .dvCart .clearAllBtn,
 .dvCart .removeBtn {
   background-color: transparent;

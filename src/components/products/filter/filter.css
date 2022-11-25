@@ -1,3 +1,6 @@
+.dvFilter .sticky-top.top90 {
+  top: 90px;
+}
 .dvFilter .modal-container label {
   display: block;
 }
