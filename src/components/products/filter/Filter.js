@@ -6,7 +6,7 @@ import "./filter.css";
 const Filter = () => {
   const dispatch = useDispatch();
   const filterList = useSelector((state) => state.filterReducer.filterList);
-  console.log(filterList);
+  // console.log(filterList);
 
   useEffect(() => {
     getFilterApi();
