@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchFilters } from "../../../redux/actions/products/FilterActions";
+import {
+  fetchFilters,
+  sendFilters,
+} from "../../../redux/actions/products/FilterActions";
 import "./filter.css";
 
 const Filter = () => {
@@ -52,7 +55,12 @@ const Filter = () => {
                           : ""}
                       </h6>
                       <label className="d-lg-flex flex-lg-row-reverse">
-                        <input type="radio" name="radio" />
+                        <input
+                          defaultChecked={id === 1}
+                          type="radio"
+                          name="radio"
+                          onChange={() => dispatch(sendFilters({ id, name }))}
+                        />
                         <span> {name}</span>
                       </label>
                     </div>

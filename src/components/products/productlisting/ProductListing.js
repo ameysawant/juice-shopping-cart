@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductList } from "../../../redux/actions/products/ProductListActions";
+import OutOfStock from "../../others/OutOfStock";
 import "./productlisting.css";
 
 const ProductListing = () => {
@@ -8,7 +9,13 @@ const ProductListing = () => {
   const productList = useSelector(
     (state) => state.productListReducer.productList
   );
-  console.log(productList);
+  const filteredData = useSelector(
+    (state) => state.productListReducer.filteredData
+  );
+  const error = useSelector(
+    (state) => state.productListReducer.filteredData.error
+  );
+  // console.log(error);
 
   useEffect(() => {
     getProductListApi();
@@ -27,7 +34,7 @@ const ProductListing = () => {
   return (
     <>
       <div className="row">
-        {productList &&
+        {filteredData.length <= 0 ? (
           productList.map((product) => {
             const {
               id,
@@ -36,7 +43,7 @@ const ProductListing = () => {
               category,
               image,
               pack,
-              packof,
+              packOf,
               price,
               size,
             } = product;
@@ -46,7 +53,11 @@ const ProductListing = () => {
                 className="col-6 col-md-4 col-lg-6 col-xl-4 col-xxl-3 text-center mb-3"
               >
                 <div className="shadow">
-                  <span className="packs">Pack of 5</span>
+                  {packOf === "pack of 0" ? (
+                    ""
+                  ) : (
+                    <span className="packs">{packOf}</span>
+                  )}
                   <img
                     width={60}
                     src={image}
@@ -64,7 +75,52 @@ const ProductListing = () => {
                 </div>
               </div>
             );
-          })}
+          })
+        ) : error ? (
+          <OutOfStock error={error} />
+        ) : (
+          filteredData.map((product) => {
+            const {
+              id,
+              heading,
+              description,
+              category,
+              image,
+              pack,
+              packOf,
+              price,
+              size,
+            } = product;
+            return (
+              <div
+                key={id}
+                className="col-6 col-md-4 col-lg-6 col-xl-4 col-xxl-3 text-center mb-3"
+              >
+                <div className="shadow">
+                  {packOf === "pack of 0" ? (
+                    ""
+                  ) : (
+                    <span className="packs">{packOf}</span>
+                  )}
+                  <img
+                    width={60}
+                    src={image}
+                    alt={heading}
+                    className="img-fluid"
+                  />
+                  <h6 className="heading-sm">{heading}</h6>
+                  <div className="d-flex justify-content-between">
+                    <div className="price">
+                      <i className="fa-solid fa-indian-rupee-sign"></i> {price}
+                    </div>
+                    <div className="size">{size}</div>
+                  </div>
+                  <button className="btn btn-black w-100">ADD TO CART</button>
+                </div>
+              </div>
+            );
+          })
+        )}
         {/* <div className="col-6 col-md-4 col-lg-6 col-xl-4 col-xxl-3 text-center mb-3">
           <div className="shadow">
             <span className="packs">Pack of 5</span>

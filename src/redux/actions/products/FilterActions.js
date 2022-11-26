@@ -6,3 +6,10 @@ export const fetchFilters = (data) => {
     payload: data,
   };
 };
+
+export const sendFilters = (data) => {
+  return {
+    type: actionTypes.SEND_FILTERS,
+    payload: data, // {id, name}
+  };
+};
