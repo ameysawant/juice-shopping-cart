@@ -1,7 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./cart.css";
 
 const Cart = () => {
+  const cartItems = useSelector((state) => state.cartReducer.cartItems);
+  // console.log(cartItems);
   return (
     <>
       <div className="modal-container">
@@ -23,171 +26,46 @@ const Cart = () => {
             </div>
           </div>
           <div className="row scrollbar">
-            <div className="col-12 mb-3 pr-lg-0">
-              <div className="bg-gray">
-                <div className="d-flex justify-content-between">
-                  <h6 className="heading-sm">Valencia Orange</h6>
-                  <button className="btn removeBtn">
-                    <i className="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-                <div className="d-flex">
-                  <span className="size mr-3">250ml</span>
-                  <span className="packs">pack of 5</span>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <div className="quantity d-flex ">
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-plus"></i>
-                    </button>
-                    <input
-                      className="f-control"
-                      type="text"
-                      readOnly
-                      placeholder="1"
-                    />
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-minus"></i>
-                    </button>
+            {cartItems &&
+              cartItems.map((item) => {
+                const { id, heading, size, packOf, price } = item;
+                return (
+                  <div key={id} className="col-12 mb-3 pr-lg-0">
+                    <div className="bg-gray">
+                      <div className="d-flex justify-content-between">
+                        <h6 className="heading-sm">{heading}</h6>
+                        <button className="btn removeBtn">
+                          <i className="fa-solid fa-xmark"></i>
+                        </button>
+                      </div>
+                      <div className="d-flex">
+                        <span className="size mr-3">{size}</span>
+                        <span className="packs">{packOf}</span>
+                      </div>
+                      <div className="d-flex justify-content-between">
+                        <div className="quantity d-flex ">
+                          <button className="btn p-2">
+                            <i className="fa-solid fa-plus"></i>
+                          </button>
+                          <input
+                            className="f-control"
+                            type="text"
+                            readOnly
+                            placeholder="1"
+                          />
+                          <button className="btn p-2">
+                            <i className="fa-solid fa-minus"></i>
+                          </button>
+                        </div>
+                        <div className="price">
+                          <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
+                          {price}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="price">
-                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 mb-3 pr-lg-0">
-              <div className="bg-gray">
-                <div className="d-flex justify-content-between">
-                  <h6 className="heading-sm">Valencia Orange</h6>
-                  <button className="btn removeBtn">
-                    <i className="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-                <div className="d-flex">
-                  <span className="size mr-3">250ml</span>
-                  <span className="packs">pack of 5</span>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <div className="quantity d-flex ">
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-plus"></i>
-                    </button>
-                    <input
-                      className="f-control"
-                      type="text"
-                      readOnly
-                      placeholder="1"
-                    />
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-minus"></i>
-                    </button>
-                  </div>
-                  <div className="price">
-                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 mb-3 pr-lg-0">
-              <div className="bg-gray">
-                <div className="d-flex justify-content-between">
-                  <h6 className="heading-sm">Valencia Orange</h6>
-                  <button className="btn removeBtn">
-                    <i className="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-                <div className="d-flex">
-                  <span className="size mr-3">250ml</span>
-                  <span className="packs">pack of 5</span>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <div className="quantity d-flex ">
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-plus"></i>
-                    </button>
-                    <input
-                      className="f-control"
-                      type="text"
-                      readOnly
-                      placeholder="1"
-                    />
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-minus"></i>
-                    </button>
-                  </div>
-                  <div className="price">
-                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 mb-3 pr-lg-0">
-              <div className="bg-gray">
-                <div className="d-flex justify-content-between">
-                  <h6 className="heading-sm">Valencia Orange</h6>
-                  <button className="btn removeBtn">
-                    <i className="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-                <div className="d-flex">
-                  <span className="size mr-3">250ml</span>
-                  <span className="packs">pack of 5</span>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <div className="quantity d-flex ">
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-plus"></i>
-                    </button>
-                    <input
-                      className="f-control"
-                      type="text"
-                      readOnly
-                      placeholder="1"
-                    />
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-minus"></i>
-                    </button>
-                  </div>
-                  <div className="price">
-                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 mb-3 pr-lg-0">
-              <div className="bg-gray">
-                <div className="d-flex justify-content-between">
-                  <h6 className="heading-sm">Valencia Orange</h6>
-                  <button className="btn removeBtn">
-                    <i className="fa-solid fa-xmark"></i>
-                  </button>
-                </div>
-                <div className="d-flex">
-                  <span className="size mr-3">250ml</span>
-                  <span className="packs">pack of 5</span>
-                </div>
-                <div className="d-flex justify-content-between">
-                  <div className="quantity d-flex ">
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-plus"></i>
-                    </button>
-                    <input
-                      className="f-control"
-                      type="text"
-                      readOnly
-                      placeholder="1"
-                    />
-                    <button className="btn p-2">
-                      <i className="fa-solid fa-minus"></i>
-                    </button>
-                  </div>
-                  <div className="price">
-                    <i className="fa-solid fa-indian-rupee-sign"></i> 240
-                  </div>
-                </div>
-              </div>
-            </div>
+                );
+              })}
           </div>
           <div className="row mb-2">
             <div className="col-12 d-flex justify-content-between pt-2">

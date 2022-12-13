@@ -8,6 +8,7 @@ import { teamReducer } from "./homepage/TeamReducer";
 import { footerReducer } from "./footer/FooterReducer";
 import { filterReducer } from "./products/FilterReducer";
 import { productListReducer } from "./products/ProdcutListReducer";
+import { cartReducer } from "./products/CartReducer";
 
 const rootReducer = combineReducers({
   headerReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   footerReducer,
   filterReducer,
   productListReducer,
+  cartReducer,
 });
 
 export default rootReducer;

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../../redux/actions/products/CartActions";
 import { fetchProductList } from "../../../redux/actions/products/ProductListActions";
 import OutOfStock from "../../others/OutOfStock";
 import "./productlisting.css";
@@ -15,7 +16,8 @@ const ProductListing = () => {
   const error = useSelector(
     (state) => state.productListReducer.filteredData.error
   );
-  // console.log(error);
+  const cartItems = useSelector((state) => state.cartReducer.cartItems);
+  console.log(cartItems);
 
   useEffect(() => {
     getProductListApi();
@@ -71,7 +73,33 @@ const ProductListing = () => {
                     </div>
                     <div className="size">{size}</div>
                   </div>
-                  <button className="btn btn-black w-100">ADD TO CART</button>
+                  <button
+                    disabled={
+                      cartItems.find((item) => item.id === id) ? true : false
+                    }
+                    className={`btn ${
+                      cartItems.find((item) => item.id === id)
+                        ? "btn-disabled"
+                        : "btn-black"
+                    } w-100`}
+                    onClick={() =>
+                      dispatch(
+                        addToCart({
+                          id,
+                          heading,
+                          description,
+                          category,
+                          image,
+                          pack,
+                          packOf,
+                          price,
+                          size,
+                        })
+                      )
+                    }
+                  >
+                    ADD TO CART
+                  </button>
                 </div>
               </div>
             );
@@ -115,7 +143,33 @@ const ProductListing = () => {
                     </div>
                     <div className="size">{size}</div>
                   </div>
-                  <button className="btn btn-black w-100">ADD TO CART</button>
+                  <button
+                    disabled={
+                      cartItems.find((item) => item.id === id) ? true : false
+                    }
+                    className={`btn ${
+                      cartItems.find((item) => item.id === id)
+                        ? "btn-disabled"
+                        : "btn-black"
+                    } w-100`}
+                    onClick={() =>
+                      dispatch(
+                        addToCart({
+                          id,
+                          heading,
+                          description,
+                          category,
+                          image,
+                          pack,
+                          packOf,
+                          price,
+                          size,
+                        })
+                      )
+                    }
+                  >
+                    ADD TO CART
+                  </button>
                 </div>
               </div>
             );
