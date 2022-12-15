@@ -1,10 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  clearAll,
+  removeItem,
+} from "../../../redux/actions/products/CartActions";
 import "./cart.css";
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
-  // console.log(cartItems);
+  console.log(cartItems);
   return (
     <>
       <div className="modal-container">
@@ -15,15 +20,24 @@ const Cart = () => {
         <div className="modal-body">
           <div className="row mb-3">
             <div className="col-12 d-flex justify-content-between">
-              <h6 className="heading-sm">Cart Items 0</h6>
-              <button className="btn clearAllBtn">Clear All</button>
+              <h6 className="heading-sm">
+                Cart Items {cartItems && cartItems.length}
+              </h6>
+              <button
+                className="btn clearAllBtn"
+                onClick={() => dispatch(clearAll([]))}
+              >
+                Clear All
+              </button>
             </div>
-            <div className="col-12">
-              <h6 className="heading-sm text-red">Cart is Empty</h6>
-              <p className="text-red">
-                Go ahead, order some items from the menu.
-              </p>
-            </div>
+            {cartItems && cartItems.length <= 0 && (
+              <div className="col-12">
+                <h6 className="heading-sm text-red">Cart is Empty</h6>
+                <p className="text-red">
+                  Go ahead, order some items from the menu.
+                </p>
+              </div>
+            )}
           </div>
           <div className="row scrollbar">
             {cartItems &&
@@ -34,7 +48,10 @@ const Cart = () => {
                     <div className="bg-gray">
                       <div className="d-flex justify-content-between">
                         <h6 className="heading-sm">{heading}</h6>
-                        <button className="btn removeBtn">
+                        <button
+                          className="btn removeBtn"
+                          onClick={() => dispatch(removeItem(id))}
+                        >
                           <i className="fa-solid fa-xmark"></i>
                         </button>
                       </div>

@@ -17,7 +17,7 @@ const ProductListing = () => {
     (state) => state.productListReducer.filteredData.error
   );
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   useEffect(() => {
     getProductListApi();
