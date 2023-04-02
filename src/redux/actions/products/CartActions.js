@@ -20,3 +20,10 @@ export const clearAll = (data) => {
     payload: data, //[]
   };
 };
+
+export const plusQty = (id) => {
+  return {
+    type: actionTypes.PLUS_QTY,
+    payload: id, //123
+  };
+};

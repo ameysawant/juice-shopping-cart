@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearAll,
+  plusQty,
   removeItem,
 } from "../../../redux/actions/products/CartActions";
 import "./cart.css";
@@ -42,7 +43,7 @@ const Cart = () => {
           <div className="row scrollbar">
             {cartItems &&
               cartItems.map((item) => {
-                const { id, heading, size, packOf, price } = item;
+                const { id, heading, size, packOf, price, quantity } = item;
                 return (
                   <div key={id} className="col-12 mb-3 pr-lg-0">
                     <div className="bg-gray">
@@ -61,7 +62,10 @@ const Cart = () => {
                       </div>
                       <div className="d-flex justify-content-between">
                         <div className="quantity d-flex ">
-                          <button className="btn p-2">
+                          <button
+                            className="btn p-2"
+                            onClick={() => dispatch(plusQty(id))}
+                          >
                             <i className="fa-solid fa-plus"></i>
                           </button>
                           <input
@@ -75,8 +79,8 @@ const Cart = () => {
                           </button>
                         </div>
                         <div className="price">
-                          <i className="fa-solid fa-indian-rupee-sign"></i>{" "}
-                          {price}
+                          <i className="fa-solid fa-indian-rupee-sign"></i>
+                          {quantity <= 0 ? price : (quantity + 1) * price}
                         </div>
                       </div>
                     </div>
