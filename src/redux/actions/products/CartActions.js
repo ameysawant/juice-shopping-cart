@@ -27,3 +27,10 @@ export const plusQty = (id) => {
     payload: id, //123
   };
 };
+
+export const minusQty = (id) => {
+  return {
+    type: actionTypes.MINUS_QTY,
+    payload: id, //123
+  };
+};

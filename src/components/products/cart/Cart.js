@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   clearAll,
+  minusQty,
   plusQty,
   removeItem,
 } from "../../../redux/actions/products/CartActions";
@@ -72,15 +73,18 @@ const Cart = () => {
                             className="f-control"
                             type="text"
                             readOnly
-                            placeholder="1"
+                            placeholder={quantity}
                           />
-                          <button className="btn p-2">
+                          <button
+                            className="btn p-2"
+                            onClick={() => dispatch(minusQty(id))}
+                          >
                             <i className="fa-solid fa-minus"></i>
                           </button>
                         </div>
                         <div className="price">
                           <i className="fa-solid fa-indian-rupee-sign"></i>
-                          {quantity <= 0 ? price : (quantity + 1) * price}
+                          {quantity <= 0 ? price : quantity * price}
                         </div>
                       </div>
                     </div>

@@ -18,4 +18,5 @@ export const actionTypes = {
   REMOVE_ITEM: "REMOVE_ITEM",
   CLEAR_ALL: "CLEAR_ALL",
   PLUS_QTY: "PLUS_QTY",
+  MINUS_QTY: "MINUS_QTY",
 };
