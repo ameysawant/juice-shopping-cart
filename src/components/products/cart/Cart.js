@@ -12,6 +12,20 @@ const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
   console.log(cartItems);
+
+  // const arr = [1, 2, 3];
+  // const subtotal = arr.reduce((total, item) => {
+  //   return total + item; //3 + 3
+  // }, 0);
+
+  const subtotal = cartItems.reduce((total, item) => {
+    return (
+      total + (item.quantity <= 0 ? item.price : item.price * item.quantity)
+    );
+  }, 0);
+
+  console.log(subtotal);
+
   return (
     <>
       <div className="modal-container">
@@ -95,7 +109,10 @@ const Cart = () => {
           <div className="row mb-2">
             <div className="col-12 d-flex justify-content-between pt-2">
               <h6 className="heading-sm">Subtotal</h6>
-              <h6 className="heading-sm">0.00</h6>
+              <h6 className="heading-sm">
+                <i className="fa-solid fa-indian-rupee-sign"></i>
+                {subtotal}
+              </h6>
             </div>
             <div className="col-12">
               <p className="small-text">Extra charges may apply.</p>
