@@ -11,6 +11,9 @@ const Filter = () => {
   const filterList = useSelector((state) => state.filterReducer.filterList);
   // console.log(filterList);
 
+  const checkedID = useSelector((state) => state.productListReducer.checkedID);
+  console.log(checkedID);
+
   useEffect(() => {
     getFilterApi();
   }, []);
@@ -56,7 +59,7 @@ const Filter = () => {
                       </h6>
                       <label className="d-lg-flex flex-lg-row-reverse">
                         <input
-                          defaultChecked={id === 1}
+                          defaultChecked={checkedID === id}
                           type="radio"
                           name="radio"
                           onChange={() => dispatch(sendFilters({ id, name }))}

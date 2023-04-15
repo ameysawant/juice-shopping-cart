@@ -3,6 +3,7 @@ import { actionTypes } from "../../types/actionTypes";
 const productListiState = {
   productList: [],
   filteredData: [],
+  checkedID: 1,
 };
 
 export const productListReducer = (state = productListiState, action) => {
@@ -16,6 +17,7 @@ export const productListReducer = (state = productListiState, action) => {
       // console.log(state.productList);
       const productList = state.productList;
       const { id, name } = action.payload;
+      console.log(id, name);
       let x = [];
       x = productList.filter(
         (item) =>
@@ -25,6 +27,7 @@ export const productListReducer = (state = productListiState, action) => {
       return {
         ...state,
         filteredData: x,
+        checkedID: id,
       };
     default:
       return state;

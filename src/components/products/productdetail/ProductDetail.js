@@ -92,7 +92,7 @@ const ProductDetail = () => {
                                 cartItems.find((item) => item.id === id)
                                   ? "btn-disabled"
                                   : "btn-black"
-                              } w-100`}
+                              } `}
                               onClick={() =>
                                 dispatch(
                                   addToCart({
