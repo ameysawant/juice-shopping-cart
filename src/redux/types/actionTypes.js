@@ -19,4 +19,5 @@ export const actionTypes = {
   CLEAR_ALL: "CLEAR_ALL",
   PLUS_QTY: "PLUS_QTY",
   MINUS_QTY: "MINUS_QTY",
+  FETCH_PRODUCT_DETAIL: "FETCH_PRODUCT_DETAIL",
 };

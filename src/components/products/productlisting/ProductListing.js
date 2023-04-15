@@ -4,6 +4,7 @@ import { addToCart } from "../../../redux/actions/products/CartActions";
 import { fetchProductList } from "../../../redux/actions/products/ProductListActions";
 import OutOfStock from "../../others/OutOfStock";
 import "./productlisting.css";
+import { Link } from "react-router-dom";
 
 const ProductListing = () => {
   const dispatch = useDispatch();
@@ -60,12 +61,14 @@ const ProductListing = () => {
                   ) : (
                     <span className="packs">{packOf}</span>
                   )}
-                  <img
-                    width={60}
-                    src={image}
-                    alt={heading}
-                    className="img-fluid"
-                  />
+                  <Link to={`/${id}`}>
+                    <img
+                      width={60}
+                      src={image}
+                      alt={heading}
+                      className="img-fluid"
+                    />
+                  </Link>
                   <h6 className="heading-sm">{heading}</h6>
                   <div className="d-flex justify-content-between">
                     <div className="price">
@@ -130,12 +133,14 @@ const ProductListing = () => {
                   ) : (
                     <span className="packs">{packOf}</span>
                   )}
-                  <img
-                    width={60}
-                    src={image}
-                    alt={heading}
-                    className="img-fluid"
-                  />
+                  <Link to={`/${id}`}>
+                    <img
+                      width={60}
+                      src={image}
+                      alt={heading}
+                      className="img-fluid"
+                    />
+                  </Link>
                   <h6 className="heading-sm">{heading}</h6>
                   <div className="d-flex justify-content-between">
                     <div className="price">
