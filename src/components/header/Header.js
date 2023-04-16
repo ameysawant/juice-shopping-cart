@@ -98,7 +98,7 @@ const Header = () => {
             <div className="col col-lg-auto ml-lg-auto text-right d-lg-none">
               <i
                 className="fa-solid fa-cart-shopping"
-                onClick={() => dispatch(openModal(true))}
+                onClick={() => dispatch(openModal("cart-modal"))}
               ></i>
               {cartItems && cartItems.length}
             </div>
