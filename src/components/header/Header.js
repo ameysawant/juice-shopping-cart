@@ -8,6 +8,7 @@ import {
   openSlideMenu,
 } from "../../redux/actions/header/HeaderActions";
 import { Link } from "react-router-dom";
+import { openModal } from "../../redux/actions/modals/ModalActions";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,8 @@ const Header = () => {
   const bgColour = useSelector((state) => state.headerReducer.background);
   const isSlide = useSelector((state) => state.headerReducer.isSlide);
   // console.log(isSlide);
+
+  const cartItems = useSelector((state) => state.cartReducer.cartItems);
 
   useEffect(() => {
     getHeaderApi();
@@ -92,8 +95,12 @@ const Header = () => {
                   })}
               </ul>
             </div>
-            <div className="col col-lg-auto ml-lg-auto text-right">
-              <i className="fa-solid fa-cart-shopping"></i>
+            <div className="col col-lg-auto ml-lg-auto text-right d-lg-none">
+              <i
+                className="fa-solid fa-cart-shopping"
+                onClick={() => dispatch(openModal(true))}
+              ></i>
+              {cartItems && cartItems.length}
             </div>
           </div>
         </div>

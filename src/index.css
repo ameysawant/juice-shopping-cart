@@ -171,12 +171,12 @@ table tr:nth-child(odd) {
 .modal .modal-container {
   background: white;
   padding: 1rem;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; */
   width: 90%;
-  transform: translate(-50%, -50%);
-  z-index: 9;
+  /* transform: translate(-50%, -50%);
+  z-index: 9; */
   border-radius: var(--b-radius);
 }
 .modal .closeBtn {

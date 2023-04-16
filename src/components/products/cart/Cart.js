@@ -7,6 +7,7 @@ import {
   removeItem,
 } from "../../../redux/actions/products/CartActions";
 import "./cart.css";
+import { closeModal } from "../../../redux/actions/modals/ModalActions";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -31,7 +32,10 @@ const Cart = () => {
       <div className="modal-container">
         <div className="modal-header d-flex justify-content-between align-items-center mb-3 d-lg-none">
           <h6 className="heading-sm">Cart</h6>
-          <i className="fa-solid fa-xmark closeBtn btn btn-black py-1"></i>
+          <i
+            className="fa-solid fa-xmark closeBtn btn btn-black py-1"
+            onClick={() => dispatch(closeModal(false))}
+          ></i>
         </div>
         <div className="modal-body">
           <div className="row mb-3">
