@@ -35,12 +35,8 @@ const Index = () => {
             </div>
             <ProductListing />
           </div>
-          <div
-            className={`dvCart modal col-lg-3 col-xl-3 col-xxl-2 ${
-              modalState === "cart-modal" ? "" : "d-none d-lg-block"
-            }`}
-          >
-            <div className="sticky-top top90 d-flex justify-content-center align-items-center align-items-lg-start h-100 h-lg-auto">
+          <div className="dvCart col-lg-3 col-xl-3 col-xxl-2 d-none d-lg-block">
+            <div className="sticky-top top90">
               <Cart />
             </div>
           </div>

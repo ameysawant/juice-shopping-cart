@@ -7,6 +7,7 @@ import Login from "./components/modals/Login";
 import SignUp from "./components/modals/SignUp";
 import { Route, Switch } from "react-router-dom";
 import ProductDetail from "./components/products/productdetail/ProductDetail";
+import Modal from "./components/modals/Modal";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/:productID" children={<ProductDetail />} />
       </Switch>
       <Footer />
+      <Modal />
       {/* <Products /> */}
       {/* <Login /> */}
       {/* <SignUp /> */}

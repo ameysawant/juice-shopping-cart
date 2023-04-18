@@ -3,7 +3,7 @@ import { actionTypes } from "../../types/actionTypes";
 export const openModal = (data) => {
   return {
     type: actionTypes.OPEN_MODAL,
-    payload: data, // true
+    payload: data, // cart-modal
   };
 };
 
