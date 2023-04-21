@@ -113,8 +113,15 @@ const Cart = () => {
           <p className="small-text">Extra charges may apply.</p>
         </div>
       </div>
-      <div className="modal-footer d-lg-none">
-        <button className="btn btn-black w-100">PROCEED</button>
+      <div className="modal-footer">
+        <button
+          className={`btn ${
+            cartItems.length <= 0 ? "btn-disabled" : "btn-black"
+          } w-100`}
+          disabled={cartItems.length <= 0 ? true : false}
+        >
+          PROCEED
+        </button>
       </div>
     </>
   );

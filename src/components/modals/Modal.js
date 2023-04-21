@@ -3,6 +3,8 @@ import Cart from "../products/cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../../redux/actions/modals/ModalActions";
 import YoutubeVideo from "./YoutubeVideo";
+import Login from "./Login";
+import SignUp from "./SignUp";
 
 const Modal = () => {
   const dispatch = useDispatch();
@@ -20,20 +22,30 @@ const Modal = () => {
     modalContent = <Cart />;
   } else if (modalState === "youtube-modal") {
     modalContent = <YoutubeVideo url={url} />;
+  } else if (modalState === "login-modal") {
+    modalContent = <Login />;
+  } else if (modalState === "signup-modal") {
+    modalContent = <SignUp />;
   } else {
     return null;
   }
 
   return (
+    // modal class names
     <div
       className={`modal d-flex justify-content-center align-items-center ${
         modalState === "cart-modal"
           ? "dvCart d-lg-none"
           : modalState === "youtube-modal"
           ? "dvYoutubeVideo"
+          : modalState === "login-modal"
+          ? "dvLogin"
+          : modalState === "signup-modal"
+          ? "dvLogin"
           : "d-none"
       }`}
     >
+      {/* Modal title name */}
       <div className="modal-container">
         <div className="modal-header d-flex justify-content-between mb-3">
           <h6 className="heading-sm">
@@ -41,6 +53,10 @@ const Modal = () => {
               ? "Cart Items"
               : modalState === "youtube-modal"
               ? "Youtube Video"
+              : modalState === "login-modal"
+              ? "User Login Form"
+              : modalState === "signup-modal"
+              ? "User Signup Form"
               : ""}
           </h6>
           <i

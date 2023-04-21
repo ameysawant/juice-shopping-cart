@@ -82,14 +82,31 @@ const Header = () => {
                 {parentLinks &&
                   parentLinks.map((item) => {
                     const { id, link } = item;
+                    console.log(link);
                     return (
                       <li key={id}>
-                        <Link
-                          to={link}
-                          onClick={() => dispatch(closeSlideMenu(false))}
-                        >
-                          {link}
-                        </Link>
+                        {link === "Login" ? (
+                          <Link
+                            to=""
+                            onClick={() => dispatch(openModal("login-modal"))}
+                          >
+                            {link}
+                          </Link>
+                        ) : link === "Sign Up" ? (
+                          <Link
+                            to=""
+                            onClick={() => dispatch(openModal("signup-modal"))}
+                          >
+                            {link}
+                          </Link>
+                        ) : (
+                          <Link
+                            to={link}
+                            onClick={() => dispatch(closeSlideMenu(false))}
+                          >
+                            {link}
+                          </Link>
+                        )}
                       </li>
                     );
                   })}
