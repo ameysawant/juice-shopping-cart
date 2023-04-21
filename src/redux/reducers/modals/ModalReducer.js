@@ -9,7 +9,7 @@ export const modalReducer = (state = modaliState, action) => {
     case actionTypes.OPEN_MODAL:
       return {
         ...state,
-        modalState: action.payload, //cart-modal
+        modalState: action.payload, //cart-modal || youtube-modal
       };
 
     case actionTypes.CLOSE_MODAL:

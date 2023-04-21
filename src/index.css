@@ -179,6 +179,9 @@ table tr:nth-child(odd) {
   z-index: 9; */
   border-radius: var(--b-radius);
 }
+.modal .modal-body {
+  position: relative;
+}
 .modal .closeBtn {
   cursor: pointer;
   padding: 0 0.5rem;

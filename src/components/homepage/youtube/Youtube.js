@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchYoutube,
-  openVideo,
-} from "../../../redux/actions/homepage/YoutubeActions";
+import { fetchYoutube } from "../../../redux/actions/homepage/YoutubeActions";
 import YoutubeVideo from "../../modals/YoutubeVideo";
 import "./youtube.css";
+import { openModal } from "../../../redux/actions/modals/ModalActions";
 
 const Youtube = () => {
   const dispatch = useDispatch();
@@ -40,7 +38,10 @@ const Youtube = () => {
           <div className="opacity text-center">
             <h2 className="heading-lg">{youtubeData.heading}</h2>
             <p className="py-3">{youtubeData.description}</p>
-            <button className="btn" onClick={() => dispatch(openVideo(true))}>
+            <button
+              className="btn"
+              onClick={() => dispatch(openModal("youtube-modal"))}
+            >
               <i className="fa-solid fa-play"></i>
             </button>
           </div>

@@ -50,12 +50,12 @@ const Cart = () => {
           </div>
         )}
       </div>
-      <div className="row scrollbar">
+      <div className="d-flex flex-wrap scrollbar">
         {cartItems &&
           cartItems.map((item) => {
             const { id, heading, size, packOf, price, quantity } = item;
             return (
-              <div key={id} className="col-12 mb-3">
+              <div key={id} className="col-12 mb-3 px-lg-0">
                 <div className="bg-gray">
                   <div className="d-flex justify-content-between">
                     <h6 className="heading-sm">{heading}</h6>
