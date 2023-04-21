@@ -7,7 +7,7 @@ import {
   fetchHeader,
   openSlideMenu,
 } from "../../redux/actions/header/HeaderActions";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { openModal } from "../../redux/actions/modals/ModalActions";
 
 const Header = () => {
@@ -21,6 +21,9 @@ const Header = () => {
   // console.log(isSlide);
 
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
+
+  const pathUrl = useLocation();
+  // console.log(pathUrl);
 
   useEffect(() => {
     getHeaderApi();
@@ -87,14 +90,14 @@ const Header = () => {
                       <li key={id}>
                         {link === "Login" ? (
                           <Link
-                            to=""
+                            to={pathUrl.pathname}
                             onClick={() => dispatch(openModal("login-modal"))}
                           >
                             {link}
                           </Link>
                         ) : link === "Sign Up" ? (
                           <Link
-                            to=""
+                            to={pathUrl.pathname}
                             onClick={() => dispatch(openModal("signup-modal"))}
                           >
                             {link}
