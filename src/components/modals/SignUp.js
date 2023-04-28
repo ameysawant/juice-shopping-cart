@@ -3,8 +3,8 @@ import React from "react";
 const SignUp = () => {
   return (
     <>
-      <div className="row align-items-lg-center">
-        <div className="col-lg-6">
+      <div className="d-lg-flex align-items-lg-center py-3 py-lg-0">
+        <div className="col-lg-6 px-lg-0">
           <img
             src="https://static.wixstatic.com/media/2c0034_120b994eb4044695afef5a324a03c4be~mv2.png"
             alt=""

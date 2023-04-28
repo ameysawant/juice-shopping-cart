@@ -1,6 +1,13 @@
-/* .dvYoutubeVideo .closeBtn {
+.dvYoutubeVideo .closeBtn {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
   z-index: 9;
-} */
+}
+.dvYoutubeVideo .modal-container {
+  position: relative;
+  padding: 0;
+}
+.dvYoutubeVideo iframe {
+  display: block;
+}

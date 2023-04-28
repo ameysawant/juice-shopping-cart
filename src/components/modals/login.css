@@ -1,6 +1,10 @@
-/* .dvLogin .closeBtn {
+.dvLogin .closeBtn {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
   z-index: 9;
-} */
+}
+.dvLogin .modal-container {
+  position: relative;
+  padding: 0;
+}

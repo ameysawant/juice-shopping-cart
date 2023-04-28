@@ -4,8 +4,8 @@ import "./login.css";
 const Login = () => {
   return (
     <>
-      <div className="row align-items-lg-center">
-        <div className="col-lg-6">
+      <div className="d-lg-flex align-items-lg-center py-3 py-lg-0">
+        <div className="col-lg-6 px-lg-0">
           <img
             src="https://static.wixstatic.com/media/2c0034_92348ac95936499693d71c23e0ba1b74~mv2.png"
             alt=""
