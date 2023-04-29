@@ -56,7 +56,7 @@ const Header = () => {
         const data = await response.json();
         dispatch(fetchHeaderSuccess(data.header));
       } else {
-        throw Error("Header");
+        throw new Error("Header");
       }
     } catch (error) {
       dispatch(fetchHeaderFailure(error.message));
