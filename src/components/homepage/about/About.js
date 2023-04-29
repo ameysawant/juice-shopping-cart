@@ -1,13 +1,23 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAbout } from "../../../redux/actions/homepage/AboutActions";
+import {
+  fetchAbout,
+  fetchAboutFailure,
+  fetchAboutRequest,
+  fetchAboutSuccess,
+} from "../../../redux/actions/homepage/AboutActions";
 import "./about.css";
+import Loading from "../../others/Loading";
+import ErrorPage from "../../others/ErrorPage";
 
 const About = () => {
   const dispatch = useDispatch();
-  const aboutData = useSelector((state) => state.aboutReducer.aboutData);
-  const points = useSelector((state) => state.aboutReducer.aboutData.points);
+  // const aboutData = useSelector((state) => state.aboutReducer.aboutData);
+  // const points = useSelector((state) => state.aboutReducer.aboutData.points);
   // console.log(aboutData);
+  const { aboutData, isLoading, error } = useSelector(
+    (state) => state.aboutReducer
+  );
 
   useEffect(() => {
     getAboutApi();
@@ -18,11 +28,28 @@ const About = () => {
     // const response = await fetch(
     //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
     // );
-    const response = await fetch(`http://localhost:8000/homepage`);
-    const data = await response.json();
-    // console.log(data.aboutus);
-    dispatch(fetchAbout(data.aboutus));
+
+    try {
+      dispatch(fetchAboutRequest());
+      const response = await fetch(`http://localhost:8000/homepage-`);
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(fetchAboutSuccess(data.aboutus));
+      } else {
+        throw new Error("About");
+      }
+    } catch (error) {
+      dispatch(fetchAboutFailure(error.message));
+    }
   };
+
+  if (isLoading) {
+    return <Loading title={"About"} />;
+  }
+
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
 
   return (
     <>
@@ -36,8 +63,8 @@ const About = () => {
               </div>
             </div>
             <div className="row">
-              {points &&
-                points.map((item) => {
+              {aboutData.points &&
+                aboutData.points.map((item) => {
                   const { id, img, heading, description } = item;
                   return (
                     <div
