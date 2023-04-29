@@ -71,87 +71,87 @@ const Header = () => {
     }
   };
 
+  if (isLoading) {
+    return <Loading title={"Header"} />;
+  }
+
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
+
   return (
     <>
-      {isLoading ? (
-        <Loading title={"Header"} />
-      ) : error ? (
-        <ErrorPage error={error} />
-      ) : (
-        hData && (
-          <div className={`dvHeader ${bgColour}`}>
-            <div className="container-lg">
-              <div className="row align-items-center pt-1">
-                <div className="col d-lg-none">
-                  <i
-                    className="fa-solid fa-bars"
-                    onClick={() => dispatch(openSlideMenu(true))}
-                  ></i>
-                </div>
-                <div className="col col-lg-auto text-center text-lg-left">
-                  <Link to="/">
-                    <img width={50} src={hData.logo && hData.logo.url} alt="" />
-                  </Link>
-                </div>
-                <div
-                  className="dvSlideMenu col-lg-auto px-0 px-lg-3"
-                  style={{ left: isSlide ? "0" : "-100%" }}
+      {hData && (
+        <div className={`dvHeader ${bgColour}`}>
+          <div className="container-lg">
+            <div className="row align-items-center pt-1">
+              <div className="col d-lg-none">
+                <i
+                  className="fa-solid fa-bars"
+                  onClick={() => dispatch(openSlideMenu(true))}
+                ></i>
+              </div>
+              <div className="col col-lg-auto text-center text-lg-left">
+                <Link to="/">
+                  <img width={50} src={hData.logo && hData.logo.url} alt="" />
+                </Link>
+              </div>
+              <div
+                className="dvSlideMenu col-lg-auto px-0 px-lg-3"
+                style={{ left: isSlide ? "0" : "-100%" }}
+              >
+                <button
+                  className="btn btn-black closeBtn d-lg-none"
+                  onClick={() => dispatch(closeSlideMenu(false))}
                 >
-                  <button
-                    className="btn btn-black closeBtn d-lg-none"
-                    onClick={() => dispatch(closeSlideMenu(false))}
-                  >
-                    <i className="fa-solid fa-xmark"></i>
-                  </button>
-                  <ul className="dvMenu">
-                    {hData.parentLinks &&
-                      hData.parentLinks.map((item) => {
-                        const { id, link } = item;
-                        console.log(link);
-                        return (
-                          <li key={id}>
-                            {link === "Login" ? (
-                              <Link
-                                to={pathUrl.pathname}
-                                onClick={() =>
-                                  dispatch(openModal("login-modal"))
-                                }
-                              >
-                                {link}
-                              </Link>
-                            ) : link === "Sign Up" ? (
-                              <Link
-                                to={pathUrl.pathname}
-                                onClick={() =>
-                                  dispatch(openModal("signup-modal"))
-                                }
-                              >
-                                {link}
-                              </Link>
-                            ) : (
-                              <Link
-                                to={link}
-                                onClick={() => dispatch(closeSlideMenu(false))}
-                              >
-                                {link}
-                              </Link>
-                            )}
-                          </li>
-                        );
-                      })}
-                  </ul>
-                </div>
-                <div className="col col-lg-auto ml-lg-auto text-right d-lg-none">
-                  <i
-                    className="fa-solid fa-cart-shopping"
-                    onClick={() => dispatch(openModal("cart-modal"))}
-                  ></i>
-                  {cartItems && cartItems.length}
-                </div>
+                  <i className="fa-solid fa-xmark"></i>
+                </button>
+                <ul className="dvMenu">
+                  {hData.parentLinks &&
+                    hData.parentLinks.map((item) => {
+                      const { id, link } = item;
+                      console.log(link);
+                      return (
+                        <li key={id}>
+                          {link === "Login" ? (
+                            <Link
+                              to={pathUrl.pathname}
+                              onClick={() => dispatch(openModal("login-modal"))}
+                            >
+                              {link}
+                            </Link>
+                          ) : link === "Sign Up" ? (
+                            <Link
+                              to={pathUrl.pathname}
+                              onClick={() =>
+                                dispatch(openModal("signup-modal"))
+                              }
+                            >
+                              {link}
+                            </Link>
+                          ) : (
+                            <Link
+                              to={link}
+                              onClick={() => dispatch(closeSlideMenu(false))}
+                            >
+                              {link}
+                            </Link>
+                          )}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+              <div className="col col-lg-auto ml-lg-auto text-right d-lg-none">
+                <i
+                  className="fa-solid fa-cart-shopping"
+                  onClick={() => dispatch(openModal("cart-modal"))}
+                ></i>
+                {cartItems && cartItems.length}
               </div>
             </div>
           </div>
-        )
+        </div>
       )}
     </>
   );

@@ -1,15 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchYoutube } from "../../../redux/actions/homepage/YoutubeActions";
+import {
+  fetchYoutube,
+  fetchYoutubeFailure,
+  fetchYoutubeRequest,
+  fetchYoutubeSuccess,
+} from "../../../redux/actions/homepage/YoutubeActions";
 import YoutubeVideo from "../../modals/YoutubeVideo";
 import "./youtube.css";
 import { openModal } from "../../../redux/actions/modals/ModalActions";
+import ErrorPage from "../../others/ErrorPage";
+import Loading from "../../others/Loading";
 
 const Youtube = () => {
   const dispatch = useDispatch();
-  const youtubeData = useSelector((state) => state.youtubeReducer.youtubeData);
-  const isClicked = useSelector((state) => state.youtubeReducer.isClicked);
-  // console.log(isClicked);
+  const { isLoading, error, youtubeData } = useSelector(
+    (state) => state.youtubeReducer
+  );
 
   useEffect(() => {
     getYoutubeApi();
@@ -20,11 +27,27 @@ const Youtube = () => {
     // const response = await fetch(
     //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
     // );
-    const response = await fetch(`http://localhost:8000/homepage`);
-    const data = await response.json();
-    // console.log(data);
-    dispatch(fetchYoutube(data.youtube));
+    try {
+      dispatch(fetchYoutubeRequest());
+      const response = await fetch(`http://localhost:8000/homepage`);
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(fetchYoutubeSuccess(data.youtube));
+      } else {
+        throw new Error("Youtube");
+      }
+    } catch (error) {
+      dispatch(fetchYoutubeFailure(error.message));
+    }
   };
+
+  if (isLoading) {
+    return <Loading title={"Youtube"} />;
+  }
+
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
 
   return (
     <>
@@ -48,7 +71,7 @@ const Youtube = () => {
         </div>
       )}
 
-      {isClicked ? <YoutubeVideo isClicked={isClicked} /> : ""}
+      {/* {isClicked ? <YoutubeVideo isClicked={isClicked} /> : ""} */}
     </>
   );
 };

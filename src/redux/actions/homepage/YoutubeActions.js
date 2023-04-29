@@ -1,8 +1,27 @@
 import { actionTypes } from "../../types/actionTypes";
 
-export const fetchYoutube = (data) => {
+// export const fetchYoutube = (data) => {
+//   return {
+//     type: actionTypes.FETCH_YOUTUBE,
+//     payload: data,
+//   };
+// };
+
+export const fetchYoutubeRequest = (data) => {
   return {
-    type: actionTypes.FETCH_YOUTUBE,
+    type: actionTypes.FETCH_YOUTUBE_REQUEST,
+    payload: data,
+  };
+};
+export const fetchYoutubeSuccess = (data) => {
+  return {
+    type: actionTypes.FETCH_YOUTUBE_SUCCESS,
+    payload: data,
+  };
+};
+export const fetchYoutubeFailure = (data) => {
+  return {
+    type: actionTypes.FETCH_YOUTUBE_FAILURE,
     payload: data,
   };
 };
