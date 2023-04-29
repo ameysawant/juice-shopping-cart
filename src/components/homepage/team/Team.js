@@ -1,15 +1,26 @@
 import React, { useEffect } from "react";
 import "./team.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTeam } from "../../../redux/actions/homepage/TeamActions";
+import {
+  fetchTeam,
+  fetchTeamFailure,
+  fetchTeamRequest,
+  fetchTeamSuccess,
+} from "../../../redux/actions/homepage/TeamActions";
+import Loading from "../../others/Loading";
+import ErrorPage from "../../others/ErrorPage";
 
 const Team = () => {
   const dispatch = useDispatch();
-  const teamData = useSelector((state) => state.teamReducer.teamData);
-  const teamMembers = useSelector(
-    (state) => state.teamReducer.teamData.teamMembers
-  );
+  // const teamData = useSelector((state) => state.teamReducer.teamData);
+  // const teamMembers = useSelector(
+  //   (state) => state.teamReducer.teamData.teamMembers
+  // );
   // console.log(teamMembers);
+
+  const { teamData, isLoading, error } = useSelector(
+    (state) => state.teamReducer
+  );
 
   useEffect(() => {
     getTeamApi();
@@ -20,11 +31,27 @@ const Team = () => {
     // const response = await fetch(
     //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
     // );
-    const response = await fetch(`http://localhost:8000/homepage`);
-    const data = await response.json();
-    // console.log(data);
-    dispatch(fetchTeam(data.team));
+    try {
+      dispatch(fetchTeamRequest());
+      const response = await fetch(`http://localhost:8000/homepage-`);
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(fetchTeamSuccess(data.team));
+      } else {
+        throw new Error("Team");
+      }
+    } catch (error) {
+      dispatch(fetchTeamFailure(error.message));
+    }
   };
+
+  if (isLoading) {
+    return <Loading title={"Team"} />;
+  }
+
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
 
   return (
     <>
@@ -38,8 +65,8 @@ const Team = () => {
               </div>
             </div>
             <div className="row">
-              {teamMembers &&
-                teamMembers.map((item) => {
+              {teamData.teamMembers &&
+                teamData.teamMembers.map((item) => {
                   const { id, img, heading, designation } = item;
                   return (
                     <div
