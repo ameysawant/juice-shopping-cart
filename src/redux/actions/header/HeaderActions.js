@@ -1,9 +1,27 @@
 import { actionTypes } from "../../types/actionTypes";
 
-export const fetchHeader = (data) => {
+// export const fetchHeader = (data) => {
+//   return {
+//     type: actionTypes.FETCH_HEADER,
+//     payload: data,
+//   };
+// };
+
+export const fetchHeaderRequest = () => {
   return {
-    type: actionTypes.FETCH_HEADER,
+    type: actionTypes.FETCH_HEADER_REQUEST,
+  };
+};
+export const fetchHeaderSuccess = (data) => {
+  return {
+    type: actionTypes.FETCH_HEADER_SUCCESS,
     payload: data,
+  };
+};
+export const fetchHeaderFailure = (error) => {
+  return {
+    type: actionTypes.FETCH_HEADER_FAILURE,
+    payload: error,
   };
 };
 
