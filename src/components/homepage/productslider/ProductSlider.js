@@ -1,19 +1,29 @@
 import React, { useEffect } from "react";
 import "./productslider.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductSlider } from "../../../redux/actions/homepage/ProductSliderActions";
+import {
+  fetchProductSlider,
+  fetchProductSliderFailure,
+  fetchProductSliderRequest,
+  fetchProductSliderSuccess,
+} from "../../../redux/actions/homepage/ProductSliderActions";
 
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import Loading from "../../others/Loading";
+import ErrorPage from "../../others/ErrorPage";
 
 const ProductSlider = () => {
   const dispatch = useDispatch();
-  const productSliderData = useSelector(
-    (state) => state.productSliderReducer.productSliderData
-  );
+  // const productSliderData = useSelector(
+  //   (state) => state.productSliderReducer.productSliderData
+  // );
   // console.log(productSliderData);
+  const { productSliderData, isLoading, error } = useSelector(
+    (state) => state.productSliderReducer
+  );
 
   useEffect(() => {
     getProductSliderApi();
@@ -24,11 +34,27 @@ const ProductSlider = () => {
     // const response = await fetch(
     //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
     // );
-    const response = await fetch(`http://localhost:8000/homepage`);
-    const data = await response.json();
-    // console.log(data);
-    dispatch(fetchProductSlider(data.productSlider));
+    try {
+      dispatch(fetchProductSliderRequest());
+      const response = await fetch(`http://localhost:8000/homepage-`);
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(fetchProductSliderSuccess(data.productSlider));
+      } else {
+        throw new Error("ProductSlider");
+      }
+    } catch (error) {
+      dispatch(fetchProductSliderFailure(error.message));
+    }
   };
+
+  if (isLoading) {
+    return <Loading title={"ProductSlider"} />;
+  }
+
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
 
   return (
     <>
