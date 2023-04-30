@@ -1,18 +1,43 @@
 import { actionTypes } from "../../types/actionTypes";
 
-const productListiState = {
+const initialState = {
   productList: [],
   filteredData: [],
   checkedID: 1,
+  isLoading: false,
+  error: null,
 };
 
-export const productListReducer = (state = productListiState, action) => {
+export const productListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.FETCH_PRODUCT_LIST:
+    // case actionTypes.FETCH_PRODUCT_LIST:
+    //   return {
+    //     ...state,
+    //     productList: action.payload, //array 25
+    //   };
+
+    case actionTypes.FETCH_PRODUCTLIST_REQUEST:
       return {
         ...state,
-        productList: action.payload, //array 25
+        isLoading: true,
+        error: false,
       };
+
+    case actionTypes.FETCH_PRODUCTLIST_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        error: false,
+        productList: action.payload, //data
+      };
+
+    case actionTypes.FETCH_PRODUCTLIST_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload, // error.message
+      };
+
     case actionTypes.SEND_FILTERS:
       // console.log(state.productList);
       const productList = state.productList;

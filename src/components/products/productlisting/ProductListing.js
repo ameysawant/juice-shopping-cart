@@ -1,24 +1,33 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../../redux/actions/products/CartActions";
-import { fetchProductList } from "../../../redux/actions/products/ProductListActions";
+import {
+  fetchProductList,
+  fetchProductListFailure,
+  fetchProductListRequest,
+  fetchProductListSuccess,
+} from "../../../redux/actions/products/ProductListActions";
 import OutOfStock from "../../others/OutOfStock";
 import "./productlisting.css";
 import { Link } from "react-router-dom";
+import Loading from "../../others/Loading";
+import ErrorPage from "../../others/ErrorPage";
 
 const ProductListing = () => {
   const dispatch = useDispatch();
-  const productList = useSelector(
-    (state) => state.productListReducer.productList
-  );
-  const filteredData = useSelector(
-    (state) => state.productListReducer.filteredData
-  );
-  const error = useSelector(
-    (state) => state.productListReducer.filteredData.error
+  // const productList = useSelector(
+  //   (state) => state.productListReducer.productList
+  // );
+  // const filteredData = useSelector(
+  //   (state) => state.productListReducer.filteredData
+  // );
+  // const error = useSelector(
+  //   (state) => state.productListReducer.filteredData.error
+  // );
+  const { productList, filteredData, isLoading, error } = useSelector(
+    (state) => state.productListReducer
   );
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
-  // console.log(cartItems);
 
   useEffect(() => {
     getProductListApi();
@@ -29,11 +38,27 @@ const ProductListing = () => {
     // const response = await fetch(
     //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
     // );
-    const response = await fetch(`http://localhost:8000/shop`);
-    const data = await response.json();
-    // console.log(data.products);
-    dispatch(fetchProductList(data.products));
+    try {
+      dispatch(fetchProductListRequest());
+      const response = await fetch(`http://localhost:8000/shop-`);
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(fetchProductListSuccess(data.products));
+      } else {
+        throw new Error("Product List");
+      }
+    } catch (error) {
+      dispatch(fetchProductListFailure(error.message));
+    }
   };
+
+  if (isLoading) {
+    return <Loading title={"Product List"} />;
+  }
+
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
   return (
     <>
       <div className="row">
@@ -107,8 +132,8 @@ const ProductListing = () => {
               </div>
             );
           })
-        ) : error ? (
-          <OutOfStock error={error} />
+        ) : filteredData.error ? (
+          <OutOfStock error={filteredData.error} />
         ) : (
           filteredData.map((product) => {
             const {

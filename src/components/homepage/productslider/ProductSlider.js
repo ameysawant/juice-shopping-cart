@@ -36,7 +36,7 @@ const ProductSlider = () => {
     // );
     try {
       dispatch(fetchProductSliderRequest());
-      const response = await fetch(`http://localhost:8000/homepage-`);
+      const response = await fetch(`http://localhost:8000/homepage`);
       if (response.ok) {
         const data = await response.json();
         dispatch(fetchProductSliderSuccess(data.productSlider));

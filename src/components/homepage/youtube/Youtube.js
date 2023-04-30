@@ -29,7 +29,7 @@ const Youtube = () => {
     // );
     try {
       dispatch(fetchYoutubeRequest());
-      const response = await fetch(`http://localhost:8000/homepage-`);
+      const response = await fetch(`http://localhost:8000/homepage`);
       if (response.ok) {
         const data = await response.json();
         dispatch(fetchYoutubeSuccess(data.youtube));

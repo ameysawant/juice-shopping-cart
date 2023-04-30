@@ -31,7 +31,7 @@ const About = () => {
 
     try {
       dispatch(fetchAboutRequest());
-      const response = await fetch(`http://localhost:8000/homepage-`);
+      const response = await fetch(`http://localhost:8000/homepage`);
       if (response.ok) {
         const data = await response.json();
         dispatch(fetchAboutSuccess(data.aboutus));
