@@ -82,6 +82,10 @@ body {
 .text-red {
   color: red;
 }
+.text-disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
 
 /*anchor*/
 a {
