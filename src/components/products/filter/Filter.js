@@ -1,28 +1,19 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  fetchFilterFailure,
-  fetchFilterRequest,
-  fetchFilterSuccess,
   fetchFilters,
   sendFilters,
 } from "../../../redux/actions/products/FilterActions";
 import "./filter.css";
 import { closeModal } from "../../../redux/actions/modals/ModalActions";
-import Loading from "../../others/Loading";
-import ErrorPage from "../../others/ErrorPage";
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const { filterList, isLoading, error } = useSelector(
-    (state) => state.filterReducer
-  );
+  const filterList = useSelector((state) => state.filterReducer.filterList);
   // console.log(filterList);
 
-  const { checkedID, productList } = useSelector(
-    (state) => state.productListReducer
-  );
-  console.log(checkedID);
+  const checkedID = useSelector((state) => state.productListReducer.checkedID);
+  // console.log(checkedID);
 
   useEffect(() => {
     getFilterApi();
@@ -33,28 +24,11 @@ const Filter = () => {
     // const response = await fetch(
     //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
     // );
-    try {
-      dispatch(fetchFilterRequest());
-      const response = await fetch(`http://localhost:8000/shop`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchFilterSuccess(data.filters));
-      } else {
-        throw new Error("Filter List");
-      }
-    } catch (error) {
-      dispatch(fetchFilterFailure(error.message));
-    }
+    const response = await fetch(`http://localhost:8000/shop`);
+    const data = await response.json();
+    // console.log(data.filters);
+    dispatch(fetchFilters(data.filters));
   };
-  console.log(productList.length);
-
-  if (isLoading) {
-    return <Loading title={"Filter List"} />;
-  }
-
-  if (error) {
-    return <ErrorPage error={error} />;
-  }
 
   return (
     <>
@@ -93,16 +67,8 @@ const Filter = () => {
                           type="radio"
                           name="radio"
                           onChange={() => dispatch(sendFilters({ id, name }))}
-                          disabled={productList.length <= 0 && true}
                         />
-                        <span
-                          className={`${
-                            productList.length <= 0 && "text-disabled"
-                          }`}
-                        >
-                          {" "}
-                          {name}
-                        </span>
+                        <span> {name}</span>
                       </label>
                     </div>
                   );

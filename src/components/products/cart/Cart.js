@@ -12,7 +12,7 @@ import { closeModal } from "../../../redux/actions/modals/ModalActions";
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   // const arr = [1, 2, 3];
   // const subtotal = arr.reduce((total, item) => {
@@ -25,7 +25,7 @@ const Cart = () => {
     );
   }, 0);
 
-  console.log(subtotal);
+  // console.log(subtotal);
 
   return (
     <>

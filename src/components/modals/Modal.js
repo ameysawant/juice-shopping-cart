@@ -9,7 +9,7 @@ import SignUp from "./SignUp";
 const Modal = () => {
   const dispatch = useDispatch();
   const modalState = useSelector((state) => state.modalReducer.modalState);
-  console.log(modalState);
+  // console.log(modalState);
 
   const url =
     modalState === "youtube-modal"

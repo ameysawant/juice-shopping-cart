@@ -110,7 +110,7 @@ const Header = () => {
                   {hData.parentLinks &&
                     hData.parentLinks.map((item) => {
                       const { id, link } = item;
-                      console.log(link);
+                      // console.log(link);
                       return (
                         <li key={id}>
                           {link === "Login" ? (
