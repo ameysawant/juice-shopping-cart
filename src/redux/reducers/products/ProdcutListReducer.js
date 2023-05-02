@@ -42,7 +42,7 @@ export const productListReducer = (state = initialState, action) => {
       // console.log(state.productList);
       const productList = state.productList;
       const { id, name } = action.payload;
-      console.log(id, name);
+      // console.log(id, name);
       let x = [];
       x = productList.filter(
         (item) =>
