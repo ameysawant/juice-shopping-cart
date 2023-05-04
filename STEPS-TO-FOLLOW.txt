@@ -1,3 +1,23 @@
+Your JSON bin has been created, with id 688e0fc8fc09.
+
+URI to access this JSON bin:
+
+https://json.extendsclass.com/bin/688e0fc8fc09
+URI to access this JSON in a text editor:
+
+https://extendsclass.com/jsonstorage/688e0fc8fc09
+
+X - X - X - X - X - X - X - X - X - X - X - X - X - X - X - X - X - X - X - X - 
+
+Your JSON bin has been created, with id 7ea18fa35d24.
+
+URI to access this JSON bin:
+
+https://json.extendsclass.com/bin/7ea18fa35d24
+URI to access this JSON in a text editor:
+
+https://extendsclass.com/jsonstorage/7ea18fa35d24
+
 STEPS TO FOLLOW:
 
 1. npx create-react-app yourfoldername

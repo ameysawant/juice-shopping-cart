@@ -45,6 +45,7 @@ const ProductListing = () => {
         const data = await response.json();
         dispatch(fetchProductListSuccess(data.products));
       } else {
+        dispatch(fetchProductListSuccess([]));
         throw new Error("Product List");
       }
     } catch (error) {
