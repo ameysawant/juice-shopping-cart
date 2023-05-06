@@ -8,11 +8,15 @@ import {
 } from "../../../redux/actions/products/CartActions";
 import "./cart.css";
 import { closeModal } from "../../../redux/actions/modals/ModalActions";
+import Loading from "../../others/Loading";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
   // console.log(cartItems);
+  const { productList, isLoading } = useSelector(
+    (state) => state.productListReducer
+  );
 
   // const arr = [1, 2, 3];
   // const subtotal = arr.reduce((total, item) => {
@@ -27,6 +31,11 @@ const Cart = () => {
 
   // console.log(subtotal);
 
+  if (isLoading) {
+    return <Loading title={"Cart Items"} />;
+  }
+
+  // if (productList.length > 0) {
   return (
     <>
       <div className="row mb-3">
@@ -125,6 +134,7 @@ const Cart = () => {
       </div>
     </>
   );
+  // }
 };
 
 export default Cart;

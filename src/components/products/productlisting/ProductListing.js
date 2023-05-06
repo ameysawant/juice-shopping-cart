@@ -40,7 +40,7 @@ const ProductListing = () => {
     // );
     try {
       dispatch(fetchProductListRequest());
-      const response = await fetch(`http://localhost:8000/shop-`);
+      const response = await fetch(`http://localhost:8000/shop`);
       if (response.ok) {
         const data = await response.json();
         dispatch(fetchProductListSuccess(data.products));

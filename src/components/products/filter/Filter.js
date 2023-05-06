@@ -53,62 +53,62 @@ const Filter = () => {
     return <ErrorPage error={error} />;
   }
 
-  if (productList.length > 0) {
-    return (
-      <>
-        <div className="modal-container">
-          <div className="modal-header d-flex justify-content-between align-items-center mb-3 d-lg-none">
-            <h6 className="heading-sm">Filter</h6>
-            <i
-              className="fa-solid fa-xmark closeBtn btn btn-black py-1"
-              onClick={() => dispatch(closeModal(false))}
-            ></i>
-          </div>
-          <div className="modal-body">
-            <div className="row">
-              <div className="col-6 col-md-4 col-lg-12 mb-3">
-                {filterList &&
-                  filterList.map((item) => {
-                    const { id, name } = item;
-                    return (
-                      <div key={id}>
-                        <h6
-                          className={`heading-sm text-lg-right ${
-                            id === 6 ? "mt-3" : id === 9 ? "mt-3" : ""
+  // if (productList.length > 0) {
+  return (
+    <>
+      <div className="modal-container">
+        <div className="modal-header d-flex justify-content-between align-items-center mb-3 d-lg-none">
+          <h6 className="heading-sm">Filter</h6>
+          <i
+            className="fa-solid fa-xmark closeBtn btn btn-black py-1"
+            onClick={() => dispatch(closeModal(false))}
+          ></i>
+        </div>
+        <div className="modal-body">
+          <div className="row">
+            <div className="col-6 col-md-4 col-lg-12 mb-3">
+              {filterList &&
+                filterList.map((item) => {
+                  const { id, name } = item;
+                  return (
+                    <div key={id}>
+                      <h6
+                        className={`heading-sm text-lg-right ${
+                          id === 6 ? "mt-3" : id === 9 ? "mt-3" : ""
+                        }`}
+                      >
+                        {id === 1
+                          ? "Categories"
+                          : id === 6
+                          ? "Size"
+                          : id === 9
+                          ? "Packs"
+                          : ""}
+                      </h6>
+                      <label className="d-lg-flex flex-lg-row-reverse">
+                        <input
+                          defaultChecked={checkedID === id}
+                          type="radio"
+                          name="radio"
+                          onChange={() => dispatch(sendFilters({ id, name }))}
+                          disabled={
+                            productList && productList.length <= 0 && true
+                          }
+                        />
+                        <span
+                          className={`${
+                            productList &&
+                            productList.length <= 0 &&
+                            "text-disabled"
                           }`}
                         >
-                          {id === 1
-                            ? "Categories"
-                            : id === 6
-                            ? "Size"
-                            : id === 9
-                            ? "Packs"
-                            : ""}
-                        </h6>
-                        <label className="d-lg-flex flex-lg-row-reverse">
-                          <input
-                            defaultChecked={checkedID === id}
-                            type="radio"
-                            name="radio"
-                            onChange={() => dispatch(sendFilters({ id, name }))}
-                            disabled={
-                              productList && productList.length <= 0 && true
-                            }
-                          />
-                          <span
-                            className={`${
-                              productList &&
-                              productList.length <= 0 &&
-                              "text-disabled"
-                            }`}
-                          >
-                            {name}
-                          </span>
-                        </label>
-                      </div>
-                    );
-                  })}
-                {/* <label className="d-lg-flex flex-lg-row-reverse">
+                          {name}
+                        </span>
+                      </label>
+                    </div>
+                  );
+                })}
+              {/* <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
                 <span>Juices</span>
               </label>
@@ -124,8 +124,8 @@ const Filter = () => {
                 <input type="radio" name="radio" />
                 <span> Protein Milkshake</span>
               </label> */}
-              </div>
-              {/* <div className="col-6 col-md-4 col-lg-12 mb-3">
+            </div>
+            {/* <div className="col-6 col-md-4 col-lg-12 mb-3">
               <h6 className="heading-sm text-lg-right">Size</h6>
               <label className="d-lg-flex flex-lg-row-reverse">
                 <input type="radio" name="radio" />
@@ -159,20 +159,20 @@ const Filter = () => {
                 <span>Pack of 20</span>
               </label>
             </div> */}
-            </div>
-          </div>
-          <div className="modal-footer d-lg-none">
-            <button
-              className="btn btn-black w-100"
-              onClick={() => dispatch(closeModal(false))}
-            >
-              APPLY FILTERS
-            </button>
           </div>
         </div>
-      </>
-    );
-  }
+        <div className="modal-footer d-lg-none">
+          <button
+            className="btn btn-black w-100"
+            onClick={() => dispatch(closeModal(false))}
+          >
+            APPLY FILTERS
+          </button>
+        </div>
+      </div>
+    </>
+  );
+  // }
 };
 
 export default Filter;

@@ -9,6 +9,7 @@ import { openModal } from "../../redux/actions/modals/ModalActions";
 const Index = () => {
   const dispatch = useDispatch();
   const modalState = useSelector((state) => state.modalReducer.modalState);
+  const { productList } = useSelector((state) => state.productListReducer);
   return (
     <>
       <div className="container-fluid">
@@ -26,8 +27,13 @@ const Index = () => {
             <div className="row mb-3 d-lg-none">
               <div className="col-12">
                 <button
-                  className="btn btn-black w-100"
+                  className={`btn ${
+                    productList && productList.length <= 0
+                      ? "btn-disabled"
+                      : "btn-black"
+                  } w-100`}
                   onClick={() => dispatch(openModal("filter-modal"))}
+                  disabled={productList && productList.length <= 0 && true}
                 >
                   Apply Filters
                 </button>
