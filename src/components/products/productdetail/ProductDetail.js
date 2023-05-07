@@ -3,18 +3,28 @@ import Cart from "../cart/Cart";
 import "./productdetail.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProductDetail } from "../../../redux/actions/products/ProductDetailActions";
+import {
+  fetchProductDetail,
+  fetchProductDetailFailure,
+  fetchProductDetailRequest,
+  fetchProductDetailSuccess,
+} from "../../../redux/actions/products/ProductDetailActions";
 import { addToCart } from "../../../redux/actions/products/CartActions";
+import Loading from "../../others/Loading";
+import ErrorPage from "../../others/ErrorPage";
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { productID } = useParams();
   // console.log(productID);
 
-  const singleItem = useSelector(
-    (state) => state.productDetailReducer.productDetailItems
+  // const singleItem = useSelector(
+  //   (state) => state.productDetailReducer.productDetailItems
+  // );
+  const { singleItem, isLoading, error } = useSelector(
+    (state) => state.productDetailReducer
   );
-  console.log(singleItem);
+  // console.log(singleItem);
 
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
 
@@ -33,11 +43,28 @@ const ProductDetail = () => {
     // const response = await fetch(
     //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
     // );
-    const response = await fetch(`http://localhost:8000/shop`);
-    const data = await response.json();
-    // console.log(data.products);
-    dispatch(fetchProductDetail({ data: data.products, productID }));
+    try {
+      dispatch(fetchProductDetailRequest());
+      const response = await fetch(`http://localhost:8000/shop`);
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(fetchProductDetailSuccess({ data: data.products, productID }));
+      } else {
+        dispatch(fetchProductDetailSuccess([]));
+        throw new Error("Product Detail");
+      }
+    } catch (error) {
+      dispatch(fetchProductDetailFailure(error.message));
+    }
   };
+
+  if (isLoading) {
+    return <Loading title={"Product Detail"} />;
+  }
+
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
 
   return (
     <>

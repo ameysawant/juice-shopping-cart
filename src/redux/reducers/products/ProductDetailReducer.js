@@ -1,18 +1,45 @@
 import { actionTypes } from "../../types/actionTypes";
 
-const productDetailiState = {
-  productDetailItems: [],
+const initialState = {
+  singleItem: [],
+  isLoading: false,
+  error: null,
 };
 
-export const productDetailReducer = (state = productDetailiState, action) => {
+export const productDetailReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.FETCH_PRODUCT_DETAIL:
-      const { data, productID } = action.payload;
-      const singleItem = data.filter((item) => item.id === parseInt(productID));
+    // case actionTypes.FETCH_PRODUCT_DETAIL:
+    //   const { data, productID } = action.payload;
+    //   const singleItem = data.filter((item) => item.id === parseInt(productID));
+    //   return {
+    //     ...state,
+    //     productDetailItems: singleItem, //[{...}]
+    //   };
+
+    case actionTypes.FETCH_PRODUCTDETAIL_REQUEST:
       return {
         ...state,
-        productDetailItems: singleItem, //[{...}]
+        isLoading: true,
+        error: false,
       };
+
+    case actionTypes.FETCH_PRODUCTDETAIL_SUCCESS:
+      const { data, productID } = action.payload;
+      const x = data.filter((item) => item.id === parseInt(productID));
+      return {
+        ...state,
+        isLoading: false,
+        error: false,
+        singleItem: x, //[{...}]
+      };
+
+    case actionTypes.FETCH_PRODUCTDETAIL_FAILURE:
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload, // error.message
+      };
+
     default:
       return state;
   }
