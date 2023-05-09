@@ -6,6 +6,7 @@ import {
   fetchFilterSuccess,
   fetchFilters,
   sendFilters,
+  getFilterApi,
 } from "../../../redux/actions/products/FilterActions";
 import "./filter.css";
 import { closeModal } from "../../../redux/actions/modals/ModalActions";
@@ -23,27 +24,27 @@ const Filter = () => {
   );
 
   useEffect(() => {
-    getFilterApi();
+    dispatch(getFilterApi());
   }, []);
 
-  const getFilterApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
-    try {
-      dispatch(fetchFilterRequest());
-      const response = await fetch(`http://localhost:8000/shop`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchFilterSuccess(data.filters));
-      } else {
-        throw new Error("Filter List");
-      }
-    } catch (error) {
-      dispatch(fetchFilterFailure(error.message));
-    }
-  };
+  // const getFilterApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
+  //   try {
+  //     dispatch(fetchFilterRequest());
+  //     const response = await fetch(`http://localhost:8000/shop`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchFilterSuccess(data.filters));
+  //     } else {
+  //       throw new Error("Filter List");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchFilterFailure(error.message));
+  //   }
+  // };
 
   if (isLoading) {
     return <Loading title={"Filter List"} />;

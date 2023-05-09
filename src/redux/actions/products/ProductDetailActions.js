@@ -24,3 +24,25 @@ export const fetchProductDetailFailure = (error) => {
     payload: error,
   };
 };
+
+export const getProductDetailApi = (productID) => {
+  // const apikey = process.env.REACT_APP_API_KEY;
+  // const response = await fetch(
+  //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  // );
+  return async (dispatch) => {
+    try {
+      dispatch(fetchProductDetailRequest());
+      const response = await fetch(`http://localhost:8000/shop`);
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(fetchProductDetailSuccess({ data: data.products, productID }));
+      } else {
+        dispatch(fetchProductDetailSuccess([]));
+        throw new Error("Product Detail");
+      }
+    } catch (error) {
+      dispatch(fetchProductDetailFailure(error.message));
+    }
+  };
+};

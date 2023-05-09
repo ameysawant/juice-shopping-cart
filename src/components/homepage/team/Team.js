@@ -6,6 +6,7 @@ import {
   fetchTeamFailure,
   fetchTeamRequest,
   fetchTeamSuccess,
+  getTeamApi,
 } from "../../../redux/actions/homepage/TeamActions";
 import Loading from "../../others/Loading";
 import ErrorPage from "../../others/ErrorPage";
@@ -23,27 +24,27 @@ const Team = () => {
   );
 
   useEffect(() => {
-    getTeamApi();
+    dispatch(getTeamApi());
   }, []);
 
-  const getTeamApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
-    try {
-      dispatch(fetchTeamRequest());
-      const response = await fetch(`http://localhost:8000/homepage`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchTeamSuccess(data.team));
-      } else {
-        throw new Error("Team");
-      }
-    } catch (error) {
-      dispatch(fetchTeamFailure(error.message));
-    }
-  };
+  // const getTeamApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
+  //   try {
+  //     dispatch(fetchTeamRequest());
+  //     const response = await fetch(`http://localhost:8000/homepage`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchTeamSuccess(data.team));
+  //     } else {
+  //       throw new Error("Team");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchTeamFailure(error.message));
+  //   }
+  // };
 
   if (isLoading) {
     return <Loading title={"Team"} />;

@@ -6,6 +6,7 @@ import {
   fetchProductSliderFailure,
   fetchProductSliderRequest,
   fetchProductSliderSuccess,
+  getProductSliderApi,
 } from "../../../redux/actions/homepage/ProductSliderActions";
 
 import { Navigation } from "swiper";
@@ -26,27 +27,27 @@ const ProductSlider = () => {
   );
 
   useEffect(() => {
-    getProductSliderApi();
+    dispatch(getProductSliderApi());
   }, []);
 
-  const getProductSliderApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
-    try {
-      dispatch(fetchProductSliderRequest());
-      const response = await fetch(`http://localhost:8000/homepage`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchProductSliderSuccess(data.productSlider));
-      } else {
-        throw new Error("ProductSlider");
-      }
-    } catch (error) {
-      dispatch(fetchProductSliderFailure(error.message));
-    }
-  };
+  // const getProductSliderApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
+  //   try {
+  //     dispatch(fetchProductSliderRequest());
+  //     const response = await fetch(`http://localhost:8000/homepage`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchProductSliderSuccess(data.productSlider));
+  //     } else {
+  //       throw new Error("ProductSlider");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchProductSliderFailure(error.message));
+  //   }
+  // };
 
   if (isLoading) {
     return <Loading title={"ProductSlider"} />;

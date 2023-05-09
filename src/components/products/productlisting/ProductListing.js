@@ -6,6 +6,7 @@ import {
   fetchProductListFailure,
   fetchProductListRequest,
   fetchProductListSuccess,
+  getProductListApi,
 } from "../../../redux/actions/products/ProductListActions";
 import OutOfStock from "../../others/OutOfStock";
 import "./productlisting.css";
@@ -30,28 +31,28 @@ const ProductListing = () => {
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
 
   useEffect(() => {
-    getProductListApi();
+    dispatch(getProductListApi());
   }, []);
 
-  const getProductListApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
-    try {
-      dispatch(fetchProductListRequest());
-      const response = await fetch(`http://localhost:8000/shop`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchProductListSuccess(data.products));
-      } else {
-        dispatch(fetchProductListSuccess([]));
-        throw new Error("Product List");
-      }
-    } catch (error) {
-      dispatch(fetchProductListFailure(error.message));
-    }
-  };
+  // const getProductListApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
+  //   try {
+  //     dispatch(fetchProductListRequest());
+  //     const response = await fetch(`http://localhost:8000/shop`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchProductListSuccess(data.products));
+  //     } else {
+  //       dispatch(fetchProductListSuccess([]));
+  //       throw new Error("Product List");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchProductListFailure(error.message));
+  //   }
+  // };
 
   if (isLoading) {
     return <Loading title={"Product List"} />;

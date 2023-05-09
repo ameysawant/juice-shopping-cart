@@ -9,6 +9,7 @@ import {
   fetchHeaderRequest,
   fetchHeaderSuccess,
   openSlideMenu,
+  getHeaderApi,
 } from "../../redux/actions/header/HeaderActions";
 import { Link, useLocation } from "react-router-dom";
 import { openModal } from "../../redux/actions/modals/ModalActions";
@@ -34,7 +35,7 @@ const Header = () => {
   // console.log(pathUrl);
 
   useEffect(() => {
-    getHeaderApi();
+    dispatch(getHeaderApi());
   }, []);
 
   useEffect(() => {
@@ -44,24 +45,24 @@ const Header = () => {
     };
   }, [bgColour]);
 
-  const getHeaderApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
-    try {
-      dispatch(fetchHeaderRequest());
-      const response = await fetch(`http://localhost:8000/homepage`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchHeaderSuccess(data.header));
-      } else {
-        throw new Error("Header");
-      }
-    } catch (error) {
-      dispatch(fetchHeaderFailure(error.message));
-    }
-  };
+  // const getHeaderApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
+  //   try {
+  //     dispatch(fetchHeaderRequest());
+  //     const response = await fetch(`http://localhost:8000/homepage`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchHeaderSuccess(data.header));
+  //     } else {
+  //       throw new Error("Header");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchHeaderFailure(error.message));
+  //   }
+  // };
 
   const changeBG = () => {
     if (window.scrollY > 0) {

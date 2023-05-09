@@ -5,6 +5,7 @@ import {
   fetchFooterFailure,
   fetchFooterRequest,
   fetchFooterSuccess,
+  getFooterApi,
 } from "../../redux/actions/footer/FooterActions";
 import "./footer.css";
 import Loading from "../others/Loading";
@@ -28,27 +29,27 @@ const Footer = () => {
   );
 
   useEffect(() => {
-    getFooterApi();
+    dispatch(getFooterApi());
   }, []);
 
-  const getFooterApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
-    try {
-      dispatch(fetchFooterRequest());
-      const response = await fetch(`http://localhost:8000/homepage`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchFooterSuccess(data.footer));
-      } else {
-        throw new Error("Footer");
-      }
-    } catch (error) {
-      dispatch(fetchFooterFailure(error.message));
-    }
-  };
+  // const getFooterApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
+  //   try {
+  //     dispatch(fetchFooterRequest());
+  //     const response = await fetch(`http://localhost:8000/homepage`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchFooterSuccess(data.footer));
+  //     } else {
+  //       throw new Error("Footer");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchFooterFailure(error.message));
+  //   }
+  // };
 
   if (isLoading) {
     return <Loading title={"Footer"} />;

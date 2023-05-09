@@ -8,6 +8,7 @@ import {
   fetchProductDetailFailure,
   fetchProductDetailRequest,
   fetchProductDetailSuccess,
+  getProductDetailApi,
 } from "../../../redux/actions/products/ProductDetailActions";
 import { addToCart } from "../../../redux/actions/products/CartActions";
 import Loading from "../../others/Loading";
@@ -34,29 +35,29 @@ const ProductDetail = () => {
 
   useEffect(() => {
     if (productID !== "") {
-      getProductDetailApi();
+      dispatch(getProductDetailApi(productID));
     }
   }, [productID]);
 
-  const getProductDetailApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
-    try {
-      dispatch(fetchProductDetailRequest());
-      const response = await fetch(`http://localhost:8000/shop`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchProductDetailSuccess({ data: data.products, productID }));
-      } else {
-        dispatch(fetchProductDetailSuccess([]));
-        throw new Error("Product Detail");
-      }
-    } catch (error) {
-      dispatch(fetchProductDetailFailure(error.message));
-    }
-  };
+  // const getProductDetailApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
+  //   try {
+  //     dispatch(fetchProductDetailRequest());
+  //     const response = await fetch(`http://localhost:8000/shop`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchProductDetailSuccess({ data: data.products, productID }));
+  //     } else {
+  //       dispatch(fetchProductDetailSuccess([]));
+  //       throw new Error("Product Detail");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchProductDetailFailure(error.message));
+  //   }
+  // };
 
   if (isLoading) {
     return <Loading title={"Product Detail"} />;

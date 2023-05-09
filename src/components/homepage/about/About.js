@@ -5,6 +5,7 @@ import {
   fetchAboutFailure,
   fetchAboutRequest,
   fetchAboutSuccess,
+  getAboutApi,
 } from "../../../redux/actions/homepage/AboutActions";
 import "./about.css";
 import Loading from "../../others/Loading";
@@ -20,28 +21,28 @@ const About = () => {
   );
 
   useEffect(() => {
-    getAboutApi();
+    dispatch(getAboutApi());
   }, []);
 
-  const getAboutApi = async () => {
-    // const apikey = process.env.REACT_APP_API_KEY;
-    // const response = await fetch(
-    //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
-    // );
+  // const getAboutApi = async () => {
+  //   // const apikey = process.env.REACT_APP_API_KEY;
+  //   // const response = await fetch(
+  //   //   `https://api.json-generator.com/templates/jy5YJ7qSuzOt/data?access_token=${apikey}`
+  //   // );
 
-    try {
-      dispatch(fetchAboutRequest());
-      const response = await fetch(`http://localhost:8000/homepage`);
-      if (response.ok) {
-        const data = await response.json();
-        dispatch(fetchAboutSuccess(data.aboutus));
-      } else {
-        throw new Error("About");
-      }
-    } catch (error) {
-      dispatch(fetchAboutFailure(error.message));
-    }
-  };
+  //   try {
+  //     dispatch(fetchAboutRequest());
+  //     const response = await fetch(`http://localhost:8000/homepage`);
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       dispatch(fetchAboutSuccess(data.aboutus));
+  //     } else {
+  //       throw new Error("About");
+  //     }
+  //   } catch (error) {
+  //     dispatch(fetchAboutFailure(error.message));
+  //   }
+  // };
 
   if (isLoading) {
     return <Loading title={"About"} />;
