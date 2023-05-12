@@ -33,6 +33,8 @@ const Header = () => {
 
   const pathUrl = useLocation();
   // console.log(pathUrl);
+  const { productID } = useSelector((state) => state.productDetailReducer);
+  // console.log(productID);
 
   useEffect(() => {
     dispatch(getHeaderApi());
@@ -79,7 +81,7 @@ const Header = () => {
   if (error) {
     return <ErrorPage error={error} />;
   }
-
+  // console.log(pathUrl.pathname);
   return (
     <>
       {hData && (
@@ -88,9 +90,16 @@ const Header = () => {
             <div className="row align-items-center pt-1">
               <div className="col d-lg-none">
                 <i
-                  className="fa-solid fa-bars"
+                  className="fa-solid fa-bars mr-2"
                   onClick={() => dispatch(openSlideMenu(true))}
                 ></i>
+                {pathUrl.pathname === `/detail/${productID}` ? (
+                  <Link to="/shop">
+                    <i className="fa-solid fa-circle-left"></i>
+                  </Link>
+                ) : (
+                  ""
+                )}
               </div>
               <div className="col col-lg-auto text-center text-lg-left">
                 <Link to="/">
@@ -108,6 +117,13 @@ const Header = () => {
                   <i className="fa-solid fa-xmark"></i>
                 </button>
                 <ul className="dvMenu">
+                  {pathUrl.pathname === `/detail/${productID}` ? (
+                    <Link to="/shop">
+                      <i className="fa-solid fa-circle-left"></i>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
                   {hData.parentLinks &&
                     hData.parentLinks.map((item) => {
                       const { id, link } = item;

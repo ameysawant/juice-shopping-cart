@@ -1,0 +1,110 @@
+1. sticky footer issue. - DONE
+2. productdetail page ui issue. - DONE
+3. when you scroll down from homepage and then go to shop it remains the same scroll state. - DONE
+4. add space around youtube modal popup. - DONE
+5. in the cart shift add button to right and minus to left. - DONE
+6. hide clear all button when cart is empty. - DONE
+7. add back button on header for productdetail page - DONE
+8. add padding around loading component and some background colour. - DONE
+9. add homepage link on the footer logo. - DONE
+10. improve design of loading component - DONE
+11. add pagenotfound component - DONE
+
+
+
+
+
+add in app.js
+<div className="main">
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/shop" component={Products} />
+          <Route path="/:productID" children={<ProductDetail />} />
+          <Route path="*" component={PageNotFound} />
+        </Switch>
+</div>
+
+add in index.css
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.main {
+  padding-bottom: 560px;
+}
+
+.dvFooter {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* height: 434px; set the height of your footer */
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-bottom: 450px;
+  }
+}
+
+add in productlisting.css
+.dvProductListing {
+  margin-top: 6rem;
+}
+
+@media (min-width: 992px) {
+  .dvProductListing {
+    min-height: 600px;
+  }
+}
+
+
+add in productdetail.css
+.dvProductDetail {
+  margin-top: 6rem;
+}
+
+@media (min-width: 992px) {
+  .dvProductDetail {
+    min-height: 600px;
+  }
+}
+
+add in loading.css & import loading.css file
+.dvError{
+text-align: center;
+    padding: 5rem;
+    background: #f1f1f1;
+}
+
+
+
+add in outofstock.js and create new empty css file
+<div className="dvOutofStock col d-flex">
+      <div className="m-auto text-center">
+        <h2 className="heading-lg">{error.toUpperCase()}</h2>
+        <p className="text-red mb-3">This product is out of stock.</p>
+      </div>
+    </div>
+
+
+add this on productdetail, productlisting index and homepage index
+ window.scrollTo(0, 0);
+
+
+
+add PAGENOTFOUND COMPONENT and add in App.js also
+import React from "react";
+import "./pagenotfound.css";
+
+const PageNotFound = () => {
+  return (
+    <div className="dvPageNotFound">
+      <h2 className="heading-lg">Page Not Found</h2>
+      <p>Sorry the page you are looking for is not available.</p>
+    </div>
+  );
+};
+
+export default PageNotFound;

@@ -10,6 +10,7 @@ import {
 import "./footer.css";
 import Loading from "../others/Loading";
 import ErrorPage from "../others/ErrorPage";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -66,7 +67,9 @@ const Footer = () => {
           <div className="container-lg">
             <div className="row dvLogo">
               <div className="col-12 text-center mb-3">
-                <img width={50} src={footerData.img} alt="" />
+                <Link to="/">
+                  <img width={50} src={footerData.img} alt="" />
+                </Link>
               </div>
             </div>
             <div className="row">

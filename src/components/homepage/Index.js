@@ -6,6 +6,7 @@ import ProductSlider from "./productslider/ProductSlider";
 import Team from "./team/Team";
 
 const Index = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <MainSlider />

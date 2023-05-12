@@ -88,7 +88,7 @@ const ProductListing = () => {
                   ) : (
                     <span className="packs">{packOf}</span>
                   )}
-                  <Link to={`/${id}`}>
+                  <Link to={`/detail/${id}`}>
                     <img
                       width={60}
                       src={image}
@@ -160,7 +160,7 @@ const ProductListing = () => {
                   ) : (
                     <span className="packs">{packOf}</span>
                   )}
-                  <Link to={`/${id}`}>
+                  <Link to={`/detail/${id}`}>
                     <img
                       width={60}
                       src={image}

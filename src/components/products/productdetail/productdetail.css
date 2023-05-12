@@ -1,3 +1,12 @@
+.dvProductDetail {
+  margin-top: 6rem;
+}
 .dvProductDetail .fa-indian-rupee-sign {
   font-size: 0.75rem;
+}
+
+@media (min-width: 992px) {
+  .dvProductDetail {
+    min-height: 600px;
+  }
 }

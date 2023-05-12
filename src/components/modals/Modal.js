@@ -49,18 +49,14 @@ const Modal = () => {
       <div className="modal-container">
         <div
           className={`modal-header d-flex justify-content-between ${
-            modalState === "login-modal" ||
-            modalState === "signup-modal" ||
-            modalState === "youtube-modal"
+            modalState === "login-modal" || modalState === "signup-modal"
               ? ""
               : "mb-3"
           }`}
         >
           <h6
             className={`heading-sm ${
-              modalState === "login-modal" ||
-              modalState === "signup-modal" ||
-              modalState === "youtube-modal"
+              modalState === "login-modal" || modalState === "signup-modal"
                 ? "d-none"
                 : ""
             }`}

@@ -43,12 +43,16 @@ const Cart = () => {
           <h6 className="heading-sm">
             Cart Items {cartItems && cartItems.length}
           </h6>
-          <button
-            className="btn clearAllBtn"
-            onClick={() => dispatch(clearAll([]))}
-          >
-            Clear All
-          </button>
+          {cartItems && cartItems.length <= 0 ? (
+            ""
+          ) : (
+            <button
+              className="btn clearAllBtn"
+              onClick={() => dispatch(clearAll([]))}
+            >
+              Clear All
+            </button>
+          )}
         </div>
         {cartItems && cartItems.length <= 0 && (
           <div className="col-12">
@@ -83,9 +87,9 @@ const Cart = () => {
                     <div className="quantity d-flex ">
                       <button
                         className="btn p-2"
-                        onClick={() => dispatch(plusQty(id))}
+                        onClick={() => dispatch(minusQty(id))}
                       >
-                        <i className="fa-solid fa-plus"></i>
+                        <i className="fa-solid fa-minus"></i>
                       </button>
                       <input
                         className="f-control"
@@ -95,9 +99,9 @@ const Cart = () => {
                       />
                       <button
                         className="btn p-2"
-                        onClick={() => dispatch(minusQty(id))}
+                        onClick={() => dispatch(plusQty(id))}
                       >
-                        <i className="fa-solid fa-minus"></i>
+                        <i className="fa-solid fa-plus"></i>
                       </button>
                     </div>
                     <div className="price">

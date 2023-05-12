@@ -1,5 +1,5 @@
 .dvProductListing {
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 .dvProductListing .packs {
   position: absolute;
@@ -15,4 +15,10 @@
 }
 .dvProductListing .shadow:hover {
   box-shadow: 0 0 5px 10px #eee;
+}
+
+@media (min-width: 992px) {
+  .dvProductListing {
+    min-height: 600px;
+  }
 }

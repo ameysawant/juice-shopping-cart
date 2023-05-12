@@ -17,6 +17,7 @@ import ErrorPage from "../../others/ErrorPage";
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { productID } = useParams();
+  window.scrollTo(0, 0);
   // console.log(productID);
 
   // const singleItem = useSelector(

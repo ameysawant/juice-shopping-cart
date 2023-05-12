@@ -10,6 +10,7 @@ const Index = () => {
   const dispatch = useDispatch();
   const modalState = useSelector((state) => state.modalReducer.modalState);
   const { productList } = useSelector((state) => state.productListReducer);
+  window.scrollTo(0, 0);
   return (
     <>
       <div className="container-fluid">

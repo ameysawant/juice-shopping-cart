@@ -4,6 +4,7 @@ const initialState = {
   singleItem: [],
   isLoading: false,
   error: null,
+  productID: null,
 };
 
 export const productDetailReducer = (state = initialState, action) => {
@@ -31,6 +32,7 @@ export const productDetailReducer = (state = initialState, action) => {
         isLoading: false,
         error: false,
         singleItem: x, //[{...}]
+        productID,
       };
 
     case actionTypes.FETCH_PRODUCTDETAIL_FAILURE:

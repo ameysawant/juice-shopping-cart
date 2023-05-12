@@ -8,16 +8,20 @@ import SignUp from "./components/modals/SignUp";
 import { Route, Switch } from "react-router-dom";
 import ProductDetail from "./components/products/productdetail/ProductDetail";
 import Modal from "./components/modals/Modal";
+import PageNotFound from "./components/others/PageNotFound";
 
 const App = () => {
   return (
     <>
       <Header />
-      <Switch>
-        <Route exact path="/" component={Homepage} />
-        <Route path="/shop" component={Products} />
-        <Route path="/:productID" children={<ProductDetail />} />
-      </Switch>
+      <div className="main">
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route path="/shop" component={Products} />
+          <Route path="/detail/:productID" children={<ProductDetail />} />
+          <Route path="*" component={PageNotFound} />
+        </Switch>
+      </div>
       <Footer />
       <Modal />
       {/* <Products /> */}
