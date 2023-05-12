@@ -130,7 +130,9 @@ const Header = () => {
                       // console.log(link);
                       return (
                         <li key={id}>
-                          {link === "Login" ? (
+                          {link === "Shop" ? (
+                            <Link to="/shop">{link}</Link>
+                          ) : link === "Login" ? (
                             <Link
                               to={pathUrl.pathname}
                               onClick={() => dispatch(openModal("login-modal"))}
