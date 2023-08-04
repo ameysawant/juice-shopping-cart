@@ -36,6 +36,7 @@ export const getHeaderApi = () => {
       const response = await fetch(`http://localhost:8000/homepage`);
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
         dispatch(fetchHeaderSuccess(data.header));
       } else {
         throw new Error("Header");
